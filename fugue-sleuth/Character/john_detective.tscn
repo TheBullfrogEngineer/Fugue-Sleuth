@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ccur52qjwyt7v"]
+
+[ext_resource type="Script" uid="uid://dytwap4e0xfc" path="res://Character/john_detective.gd" id="1_nx3uc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ayxd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ggs6p"]
+
+[node name="John Detective" type="CharacterBody3D" unique_id=934400168]
+script = ExtResource("1_nx3uc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1904148566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_4ayxd")
+
+[node name="WorldModel" type="Node3D" parent="." unique_id=1563981028]
+unique_name_in_owner = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldModel" unique_id=1902436628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.999521, 0)
+mesh = SubResource("CapsuleMesh_ggs6p")
+
+[node name="Head" type="Node3D" parent="." unique_id=289795604]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1554231401]
+unique_name_in_owner = true

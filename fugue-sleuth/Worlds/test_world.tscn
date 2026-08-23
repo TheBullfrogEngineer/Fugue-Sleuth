@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dw1bw6ttpuyyf"]
+
+[ext_resource type="PackedScene" uid="uid://ccur52qjwyt7v" path="res://Character/john_detective.tscn" id="1_3xrbq"]
+
+[sub_resource type="Environment" id="Environment_4ayxd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ayxd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggs6p"]
+
+[node name="TestWorld" type="Node3D" unique_id=943294314]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=642467113]
+environment = SubResource("Environment_4ayxd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1400096253]
+transform = Transform3D(-0.86753637, -0.42955074, 0.25073266, -0.35514086, 0.88791543, 0.2923717, -0.34821787, 0.16459765, -0.92284995, 0, 11.701656, 24.502739)
+light_energy = 0.4
+shadow_enabled = true
+
+[node name="TestLevel" type="Node3D" parent="WorldEnvironment" unique_id=1848478467]
+
+[node name="Floor" type="CSGBox3D" parent="WorldEnvironment/TestLevel" unique_id=1650739439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 0)
+use_collision = true
+size = Vector3(100, 12, 100)
+material = SubResource("StandardMaterial3D_4ayxd")
+
+[node name="Wall" type="CSGBox3D" parent="WorldEnvironment/TestLevel" unique_id=756956463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+use_collision = true
+size = Vector3(50, 25, 1)
+material = SubResource("StandardMaterial3D_ggs6p")
+
+[node name="John Detective" parent="." unique_id=934400168 instance=ExtResource("1_3xrbq")]
