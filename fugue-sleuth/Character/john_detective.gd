@@ -105,6 +105,10 @@ func _handle_ground_physics(delta) -> void:
 func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down").normalized()
 	wish_dir = self.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)
+	if Input.is_action_pressed("Crouch"):
+		%CollisionShape3D.shape.height = 0.3
+	else:
+		%CollisionShape3D.shape.height = 1
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump") or (auto_bhop and Input.is_action_pressed("jump")):

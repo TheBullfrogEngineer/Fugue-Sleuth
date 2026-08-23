@@ -14,7 +14,7 @@
 environment = SubResource("Environment_4ayxd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1400096253]
-transform = Transform3D(-0.86753637, -0.42955074, 0.25073266, -0.35514086, 0.88791543, 0.2923717, -0.34821787, 0.16459765, -0.92284995, 0, 11.701656, 24.502739)
+transform = Transform3D(-0.86753637, -0.42955074, 0.25073266, -0.35514086, 0.88791543, 0.2923717, -0.34821787, 0.16459765, -0.92284995, 0, 32.44034, 24.705898)
 light_energy = 0.4
 shadow_enabled = true
 
@@ -27,7 +27,7 @@ size = Vector3(100, 12, 100)
 material = SubResource("StandardMaterial3D_4ayxd")
 
 [node name="Wall" type="CSGBox3D" parent="WorldEnvironment/TestLevel" unique_id=756956463]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+transform = Transform3D(0.82798433, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 5.1479416)
 use_collision = true
 size = Vector3(50, 25, 1)
 material = SubResource("StandardMaterial3D_ggs6p")
