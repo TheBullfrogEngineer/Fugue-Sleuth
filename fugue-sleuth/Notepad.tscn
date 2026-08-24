@@ -52,7 +52,6 @@ offset_right = -390.0
 offset_bottom = -275.0
 
 [node name="Notes" parent="." unique_id=248706914 instance=ExtResource("3_pe64q")]
-visible = false
 layout_mode = 0
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Notes" to="." method="_on_notes_pressed"]
