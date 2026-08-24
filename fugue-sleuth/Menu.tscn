@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://4pfvp0hcsow"]
+
+[ext_resource type="Script" uid="uid://daqe12p5oghvd" path="res://menu.gd" id="1_uubjt"]
+
+[node name="Menu" type="Control" unique_id=92778484]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1082.0
+offset_bottom = -547.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uubjt")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=78313380]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1092308254]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=137896711]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Settings" type="Button" parent="PanelContainer/VBoxContainer" unique_id=713512402]
+layout_mode = 2
+text = "Settings"
+
+[node name="Credits" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1922070207]
+process_mode = 3
+layout_mode = 2
+text = "Credits"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dw1bw6ttpuyyf"]
 
 [ext_resource type="PackedScene" uid="uid://ccur52qjwyt7v" path="res://Character/john_detective.tscn" id="1_3xrbq"]
+[ext_resource type="PackedScene" uid="uid://j0ixb01qc4rs" path="res://Notepad.tscn" id="2_0n0fo"]
 
 [sub_resource type="Environment" id="Environment_4ayxd"]
 
@@ -33,3 +34,5 @@ size = Vector3(50, 25, 1)
 material = SubResource("StandardMaterial3D_ggs6p")
 
 [node name="John Detective" parent="." unique_id=934400168 instance=ExtResource("1_3xrbq")]
+
+[node name="Control" parent="." unique_id=101648911 instance=ExtResource("2_0n0fo")]

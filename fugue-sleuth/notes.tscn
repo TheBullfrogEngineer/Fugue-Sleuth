@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://by7fdj8xfet27"]
+
+[node name="Notes" type="Control" unique_id=248706914]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 345.0
+offset_bottom = 397.0
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=142857937]
+layout_mode = 1
+offset_right = 68.5
+offset_bottom = 80.0
+scale = Vector2(5, 5)
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer" unique_id=1496054007]
+layout_mode = 2
