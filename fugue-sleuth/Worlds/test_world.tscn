@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dw1bw6ttpuyyf"]
 
 [ext_resource type="PackedScene" uid="uid://ccur52qjwyt7v" path="res://Character/john_detective.tscn" id="1_3xrbq"]
-[ext_resource type="PackedScene" uid="uid://j0ixb01qc4rs" path="res://Notepad.tscn" id="2_0n0fo"]
+[ext_resource type="PackedScene" uid="uid://j0ixb01qc4rs" path="res://Menus/Notepad.tscn" id="2_0n0fo"]
 
 [sub_resource type="Environment" id="Environment_4ayxd"]
 

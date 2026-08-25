@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://by7fdj8xfet27"]
+
+[ext_resource type="Script" uid="uid://chg5lwjbkmt4o" path="res://Menus/notes.gd" id="1_cfm4k"]
+[ext_resource type="Script" uid="uid://bqmgve15crf1k" path="res://Menus/painter_image.gd" id="2_cfm4k"]
+[ext_resource type="Script" uid="uid://8prm7kmnsjc" path="res://Menus/text_edit.gd" id="3_n7nvc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8as4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w2tp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Notes" type="Control" unique_id=248706914]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+script = ExtResource("1_cfm4k")
+
+[node name="PainterImage" type="Sprite2D" parent="." unique_id=503555070]
+position = Vector2(250, 325)
+script = ExtResource("2_cfm4k")
+img_size = Vector2i(400, 550)
+
+[node name="Panel" type="Panel" parent="." unique_id=309858190]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 550.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v8as4")
+
+[node name="TextEdit" type="TextEdit" parent="Panel" unique_id=812810777]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+wrap_mode = 1
+script = ExtResource("3_n7nvc")

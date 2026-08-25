@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://j0ixb01qc4rs"]
 
-[ext_resource type="Script" uid="uid://bf6sfucpr7wg0" path="res://notepad.gd" id="1_8ul4w"]
-[ext_resource type="PackedScene" uid="uid://4pfvp0hcsow" path="res://Menu.tscn" id="1_82ir8"]
-[ext_resource type="PackedScene" uid="uid://by7fdj8xfet27" path="res://notes.tscn" id="3_pe64q"]
+[ext_resource type="PackedScene" uid="uid://4pfvp0hcsow" path="res://Menus/Menu.tscn" id="1_82ir8"]
+[ext_resource type="Script" uid="uid://bf6sfucpr7wg0" path="res://Menus/notepad.gd" id="1_amhaa"]
+[ext_resource type="PackedScene" uid="uid://by7fdj8xfet27" path="res://Menus/notes.tscn" id="3_pe64q"]
 
 [node name="Control" type="Control" unique_id=101648911]
 process_mode = 3
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8ul4w")
+script = ExtResource("1_amhaa")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1064020834]
 layout_mode = 1
@@ -53,6 +53,10 @@ offset_bottom = -275.0
 
 [node name="Notes" parent="." unique_id=248706914 instance=ExtResource("3_pe64q")]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 400.0
+offset_bottom = 550.0
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Notes" to="." method="_on_notes_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Evidence" to="." method="_on_evidence_pressed"]
