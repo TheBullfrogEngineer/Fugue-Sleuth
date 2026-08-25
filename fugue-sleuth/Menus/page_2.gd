@@ -11,6 +11,7 @@ func _on_text_changed() -> void:
 	if get_total_visible_line_count() > 15:
 		text = notes
 		$".".visible = false
-		$"../Page2".visible = true
+		#Page 3 Not yet made, we will add 10 pages for now.
+		$"../Page3".visible = true
 	elif get_total_visible_line_count() < 16:
 		notes = text
