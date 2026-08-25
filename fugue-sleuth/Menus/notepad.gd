@@ -1,17 +1,34 @@
 extends Control
 
+var is_paused = false
 
-func resume():
-	get_tree().paused = false
-	
-func pause():
-	get_tree().paused = true
-#This doesn't work so somebody please fix it
-func menu_toggle():
-	if Input.is_action_just_pressed("Notepad") and get_tree().paused == false:
-		pause()
-	elif Input.is_action_just_pressed("Notepad") and get_tree().paused == true:
+func _ready() -> void:
+	self.visible = false
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Notepad"):
+		pause_toggle()
+		
+func pause_toggle():
+	if is_paused:
 		resume()
+	else:
+		pause()
+
+
+func pause() -> void:
+	is_paused = true
+	visible = true
+	get_tree().paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+
+
+func resume() -> void:
+	is_paused = false
+	visible = false
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	
 
 #Everything down here works fine
 func _on_notes_pressed() -> void:
