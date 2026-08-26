@@ -6,7 +6,7 @@ extends Control
 
 
 func _on_quit_pressed() -> void:
-	get_tree().quit
+	get_viewport().quit
 
 
 func _on_settings_pressed() -> void:

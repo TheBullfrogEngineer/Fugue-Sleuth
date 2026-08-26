@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4pfvp0hcsow"]
 
-[ext_resource type="Script" uid="uid://daqe12p5oghvd" path="res://menu.gd" id="1_uubjt"]
+[ext_resource type="Script" uid="uid://daqe12p5oghvd" path="res://Menus/SettingsMenu/menu.gd" id="1_gis1d"]
 
 [node name="Menu" type="Control" unique_id=92778484]
 layout_mode = 3
@@ -11,7 +11,7 @@ offset_right = -1082.0
 offset_bottom = -547.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uubjt")
+script = ExtResource("1_gis1d")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=78313380]
 layout_mode = 0
