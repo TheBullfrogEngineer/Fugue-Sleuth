@@ -49,7 +49,12 @@ func _headbob_effect(delta):
 	)
 			
 func _process(delta):
-	pass
+	if get_interactable_object_at_shapecast():
+		$Label.visible = true
+		if Input.is_action_just_pressed("interact"):
+			get_interactable_object_at_shapecast().interact_with()
+	else:
+		$Label.visible = false
 	
 func clip_velocity(normal: Vector3, overbounce : float, delta : float) -> void:
 	var backoff:= self.velocity.dot(normal) * overbounce
@@ -119,3 +124,11 @@ func _physics_process(delta):
 		_handle_air_physics(delta)
 		
 	move_and_slide()
+	
+func get_interactable_object_at_shapecast() -> InteractableObject:
+	for i in %InteractShapeCast3D.get_collision_count():
+		if i> 0 and %InteractShapeCast3D.get_collider(0) != $'.':
+			return null
+		if %InteractShapeCast3D.get_collider(i).get_node_or_null("InteractableObject") is InteractableObject:
+			return %InteractShapeCast3D.get_collider(i).get_node_or_null("InteractableObject")
+	return null
