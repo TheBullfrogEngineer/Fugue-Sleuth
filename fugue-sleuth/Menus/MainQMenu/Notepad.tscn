@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://j0ixb01qc4rs"]
 
-[ext_resource type="PackedScene" uid="uid://4pfvp0hcsow" path="res://Menus/Menu.tscn" id="1_82ir8"]
-[ext_resource type="Script" uid="uid://bf6sfucpr7wg0" path="res://Menus/notepad.gd" id="1_amhaa"]
-[ext_resource type="PackedScene" uid="uid://by7fdj8xfet27" path="res://Menus/notes.tscn" id="3_pe64q"]
+[ext_resource type="PackedScene" uid="uid://4pfvp0hcsow" path="res://Menus/SettingsMenu/Menu.tscn" id="1_82ir8"]
+[ext_resource type="Script" uid="uid://bf6sfucpr7wg0" path="res://Menus/MainQMenu/notepad.gd" id="1_amhaa"]
+[ext_resource type="PackedScene" uid="uid://by7fdj8xfet27" path="res://Menus/NotesMenu/notes.tscn" id="3_pe64q"]
 
 [node name="Control" type="Control" unique_id=101648911]
 process_mode = 3

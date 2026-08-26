@@ -10,8 +10,24 @@ var page := 0
 func check_page():
 	if $"../Panel/Page1".visible:
 		page = 0
-	else:
+	elif $"../Panel/Page2".visible:
 		page = 1
+	elif $"../Panel/Page3".visible:
+		page = 2
+	elif $"../Panel/Page4".visible:
+		page = 3
+	elif $"../Panel/Page5".visible:
+		page = 4
+	elif $"../Panel/Page6".visible:
+		page = 5
+	elif $"../Panel/Page7".visible:
+		page = 6
+	elif $"../Panel/Page8".visible:
+		page = 7
+	elif $"../Panel/Page9".visible:
+		page = 8
+	elif $"../Panel/Page10".visible:
+		page = 9
 		
 	texture.update(imgs[page])
 

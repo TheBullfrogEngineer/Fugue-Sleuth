@@ -1,0 +1,330 @@
+[gd_scene format=3 uid="uid://by7fdj8xfet27"]
+
+[ext_resource type="Script" uid="uid://chg5lwjbkmt4o" path="res://Menus/NotesMenu/notes.gd" id="1_fy723"]
+[ext_resource type="Script" uid="uid://bqmgve15crf1k" path="res://Menus/NotesMenu/painter_image.gd" id="2_fy723"]
+[ext_resource type="Script" uid="uid://8prm7kmnsjc" path="res://Menus/NotesMenu/Pages/page_1.gd" id="3_fy723"]
+[ext_resource type="Script" uid="uid://civ68ahhgdl5o" path="res://Menus/NotesMenu/Pages/page_2.gd" id="4_4xdwb"]
+[ext_resource type="Script" uid="uid://cwauqgip0jsuj" path="res://Menus/NotesMenu/Pages/page_3.gd" id="5_g6l16"]
+[ext_resource type="Script" uid="uid://bsphus15d0ug8" path="res://Menus/NotesMenu/Pages/page_4.gd" id="6_8y77b"]
+[ext_resource type="Script" uid="uid://qx6jnfse6oty" path="res://Menus/NotesMenu/Pages/page_5.gd" id="7_g6l16"]
+[ext_resource type="Script" uid="uid://nvx6rfpa70v0" path="res://Menus/NotesMenu/Pages/page_6.gd" id="8_8y77b"]
+[ext_resource type="Script" uid="uid://boqvu4pb6f50b" path="res://Menus/NotesMenu/Pages/page_7.gd" id="9_h0opo"]
+[ext_resource type="Script" uid="uid://dgmp0nr768a0m" path="res://Menus/NotesMenu/Pages/page_8.gd" id="10_rpyfp"]
+[ext_resource type="Script" uid="uid://c3awe645ognhe" path="res://Menus/NotesMenu/Pages/page_9.gd" id="11_v2bhy"]
+[ext_resource type="Script" uid="uid://gtlir8d56b2h" path="res://Menus/NotesMenu/Pages/page_10.gd" id="12_rpyfp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8as4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w2tp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Notes" type="Control" unique_id=248706914]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+script = ExtResource("1_fy723")
+
+[node name="PainterImage" type="Sprite2D" parent="." unique_id=503555070]
+position = Vector2(250, 325)
+script = ExtResource("2_fy723")
+img_size = Vector2i(400, 550)
+
+[node name="Panel" type="Panel" parent="." unique_id=309858190]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 550.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v8as4")
+
+[node name="Page1" type="TextEdit" parent="Panel" unique_id=812810777]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+script = ExtResource("3_fy723")
+
+[node name="Page2" type="TextEdit" parent="Panel" unique_id=14146425]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+script = ExtResource("4_4xdwb")
+
+[node name="Page3" type="TextEdit" parent="Panel" unique_id=1542881722]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+script = ExtResource("5_g6l16")
+
+[node name="Page4" type="TextEdit" parent="Panel" unique_id=1640953766]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+script = ExtResource("6_8y77b")
+
+[node name="Page5" type="TextEdit" parent="Panel" unique_id=59849418]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+script = ExtResource("7_g6l16")
+
+[node name="Page6" type="TextEdit" parent="Panel" unique_id=1190142923]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+script = ExtResource("8_8y77b")
+
+[node name="Page7" type="TextEdit" parent="Panel" unique_id=877588281]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+script = ExtResource("9_h0opo")
+
+[node name="Page8" type="TextEdit" parent="Panel" unique_id=134798980]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+script = ExtResource("10_rpyfp")
+
+[node name="Page9" type="TextEdit" parent="Panel" unique_id=743203319]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+script = ExtResource("11_v2bhy")
+
+[node name="Page10" type="TextEdit" parent="Panel" unique_id=103402407]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+script = ExtResource("12_rpyfp")
+
+[node name="Next Page" type="Button" parent="." unique_id=350225566]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 3.0
+offset_right = 259.0
+offset_bottom = 34.0
+text = "Next Page
+"
+
+[node name="Previous Page" type="Button" parent="." unique_id=373029488]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 3.0
+offset_right = 164.0
+offset_bottom = 34.0
+text = "Previous Page
+"
+
+[connection signal="text_changed" from="Panel/Page1" to="Panel/Page1" method="_on_text_changed"]
+[connection signal="text_changed" from="Panel/Page2" to="Panel/Page2" method="_on_text_changed"]
+[connection signal="text_changed" from="Panel/Page3" to="Panel/Page3" method="_on_text_changed"]
+[connection signal="text_changed" from="Panel/Page4" to="Panel/Page4" method="_on_text_changed"]
+[connection signal="text_changed" from="Panel/Page5" to="Panel/Page5" method="_on_text_changed"]
+[connection signal="text_changed" from="Panel/Page6" to="Panel/Page6" method="_on_text_changed"]
+[connection signal="text_changed" from="Panel/Page7" to="Panel/Page7" method="_on_text_changed"]
+[connection signal="text_changed" from="Panel/Page8" to="Panel/Page8" method="_on_text_changed"]
+[connection signal="text_changed" from="Panel/Page9" to="Panel/Page9" method="_on_text_changed"]
+[connection signal="text_changed" from="Panel/Page10" to="Panel/Page10" method="_on_text_changed"]
+[connection signal="pressed" from="Next Page" to="." method="_on_next_page_pressed"]
+[connection signal="pressed" from="Previous Page" to="." method="_on_previous_page_pressed"]
