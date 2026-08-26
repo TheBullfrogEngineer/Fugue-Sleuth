@@ -4,14 +4,26 @@ extends Sprite2D
 @export var img_size := Vector2i(800, 1100)
 @export var brush_size := 2
 
-var img : Image
+var imgs : Array[Image] = []
+var page := 0
+
+func check_page():
+	if $"../Panel/Page1".visible:
+		page = 0
+	else:
+		page = 1
+		
+	texture.update(imgs[page])
+
 func _ready() -> void:
-	img = Image.create_empty(img_size.x, img_size.y, false, Image.FORMAT_RGBA8)
-	img.fill(Color.WHITE)
-	texture = ImageTexture.create_from_image(img)
+	for i in 10:
+		var img = Image.create_empty(img_size.x, img_size.y, false, Image.FORMAT_RGBA8)
+		img.fill(Color.WHITE)
+		imgs.append(img)
+	texture = ImageTexture.create_from_image(imgs[0])
 	
 func _paint_tex(pos) -> void:
-	img.fill_rect(Rect2i(pos, Vector2i(1,1)).grow(brush_size), paint_color)
+	imgs[page].fill_rect(Rect2i(pos, Vector2i(1,1)).grow(brush_size), paint_color)
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -25,4 +37,4 @@ func _input(event: InputEvent) -> void:
 				for i in num:
 					impos = impos.move_toward(target_pos, 1.0)
 					_paint_tex(impos)
-			texture.update(img)
+			texture.update(imgs[page])

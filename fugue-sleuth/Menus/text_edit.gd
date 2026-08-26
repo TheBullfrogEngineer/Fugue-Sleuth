@@ -12,5 +12,6 @@ func _on_text_changed() -> void:
 		text = notes
 		$".".visible = false
 		$"../Page2".visible = true
+		$"../../PainterImage".check_page()
 	elif get_total_visible_line_count() < 16:
 		notes = text
