@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dg6rxflkuk0oi" path="res://Character/right3.png" id="7_3xlxg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ayxd"]
+radius = 0.15
 height = 3.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ggs6p"]
@@ -78,6 +79,48 @@ animations = [{
 "name": &"RightRun",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_kgbqg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.9, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oopl0"]
+resource_name = "standing_to_crouch"
+length = 0.19999999999999998
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.9, 0), Vector3(0, 1.5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kgbqg"]
+_data = {
+&"RESET": SubResource("Animation_kgbqg"),
+&"standing_to_crouch": SubResource("Animation_oopl0")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oopl0"]
+radius = 0.15
+height = 0.5
 
 [node name="John Detective" type="CharacterBody3D" unique_id=934400168]
 script = ExtResource("1_nx3uc")
@@ -162,3 +205,12 @@ scale = Vector2(1.0758427, 0.907964)
 sprite_frames = SubResource("SpriteFrames_ggs6p")
 animation = &"RightIdle"
 autoplay = "RightIdle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=454212686]
+libraries/ = SubResource("AnimationLibrary_kgbqg")
+
+[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="." unique_id=1511699359]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23211795, 0)
+shape = SubResource("CapsuleShape3D_oopl0")
+disabled = true

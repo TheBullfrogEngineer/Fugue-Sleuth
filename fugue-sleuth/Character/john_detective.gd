@@ -19,6 +19,8 @@ var headbob_time: =0.0
 @export var air_move_speed := 500
 
 var wish_dir:= Vector3.ZERO
+var is_crouching = false
+var is_standing = true
 
 func get_move_speed() -> float:
 	return sprint_speed if Input.is_action_pressed("sprint") else walk_speed
@@ -112,10 +114,12 @@ func _handle_ground_physics(delta) -> void:
 func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down").normalized()
 	wish_dir = self.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)
-	if Input.is_action_pressed("Crouch"):
-		%CollisionShape3D.shape.height = 0.3
-	else:
-		%CollisionShape3D.shape.height = 2
+	if Input.is_action_just_pressed("Crouch"):
+		if is_crouching == false:
+			movement_state_change("crouch")
+		elif is_crouching == true:
+			movement_state_change("uncrouch")
+		
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump") or (auto_bhop and Input.is_action_pressed("jump")):
@@ -134,3 +138,27 @@ func get_interactable_object_at_shapecast() -> InteractableObject:
 		if %InteractShapeCast3D.get_collider(i).get_node_or_null("InteractableObject") is InteractableObject:
 			return %InteractShapeCast3D.get_collider(i).get_node_or_null("InteractableObject")
 	return null
+
+func movement_state_change(changeType):
+	match changeType:
+		"crouch":
+			if is_standing:
+				$AnimationPlayer.play("standing_to_crouch")
+			is_crouching = true
+			is_standing = false
+			change_collision_shape("crouch")
+		"uncrouch":
+			$AnimationPlayer.play_backwards("standing_to_crouch")
+			is_crouching = false
+			is_standing = true
+			change_collision_shape("stand")
+			
+func change_collision_shape(shape):
+	match shape:
+		"crouch":
+			%CrouchingCollisionShape.disabled = false
+			%CollisionShape3D.disabled = true
+		"stand":
+			%CrouchingCollisionShape.disabled = true
+			%CollisionShape3D.disabled = false
+	
