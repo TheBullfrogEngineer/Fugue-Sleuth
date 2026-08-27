@@ -1,98 +1,35 @@
 extends Control
 
+var unlocked_notes: Array[int] = [1,2] 
 
-# Called when the node enters the scene tree for the first time.
+var current_note_index: int = 0 
+
 func _ready() -> void:
-	pass
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-		
-
+	_update_page_visibility()
 
 func _on_next_page_pressed() -> void:
-	if $Panel/Page1.visible == true:
-		$Panel/Page1.visible = false
-		$Panel/Page2.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page2.visible == true:
-		$Panel/Page2.visible = false
-		$Panel/Page3.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page3.visible == true:
-		$Panel/Page3.visible = false
-		$Panel/Page4.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page4.visible == true:
-		$Panel/Page4.visible = false
-		$Panel/Page5.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page5.visible == true:
-		$Panel/Page5.visible = false
-		$Panel/Page6.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page6.visible == true:
-		$Panel/Page6.visible = false
-		$Panel/Page7.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page7.visible == true:
-		$Panel/Page7.visible = false
-		$Panel/Page8.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page8.visible == true:
-		$Panel/Page8.visible = false
-		$Panel/Page9.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page9.visible == true:
-		$Panel/Page9.visible = false
-		$Panel/Page10.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page10.visible == true:
-		$Panel/Page10.visible = false
-		$Panel/Page1.visible = true
-		$PainterImage.check_page()
+	if unlocked_notes.is_empty(): return
+	current_note_index = (current_note_index + 1) % unlocked_notes.size()
+	_update_page_visibility()
 
 func _on_previous_page_pressed() -> void:
-	if $Panel/Page1.visible == true:
-		$Panel/Page1.visible = false
-		$Panel/Page10.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page2.visible == true:
-		$Panel/Page2.visible = false
-		$Panel/Page1.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page3.visible == true:
-		$Panel/Page3.visible = false
-		$Panel/Page2.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page4.visible == true:
-		$Panel/Page4.visible = false
-		$Panel/Page3.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page5.visible == true:
-		$Panel/Page5.visible = false
-		$Panel/Page4.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page6.visible == true:
-		$Panel/Page6.visible = false
-		$Panel/Page5.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page7.visible == true:
-		$Panel/Page7.visible = false
-		$Panel/Page6.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page8.visible == true:
-		$Panel/Page8.visible = false
-		$Panel/Page7.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page9.visible == true:
-		$Panel/Page9.visible = false
-		$Panel/Page8.visible = true
-		$PainterImage.check_page()
-	elif $Panel/Page10.visible == true:
-		$Panel/Page10.visible = false
-		$Panel/Page9.visible = true
-		$PainterImage.check_page()
+	if unlocked_notes.is_empty(): return
+	current_note_index = (current_note_index - 1 + unlocked_notes.size()) % unlocked_notes.size()
+	_update_page_visibility()
+
+func _update_page_visibility() -> void:
+	if unlocked_notes.is_empty(): return
+	for i in range(1, 11):
+		var page = get_node("Panel/Page" + str(i))
+		if page != null:
+			page.visible = false
+	var active_page_number = unlocked_notes[current_note_index]
+	var active_page = get_node("Panel/Page" + str(active_page_number))
+	if active_page != null:
+		active_page.visible = true
+	$PainterImage.check_page()
+
+func unlock_new_note(page_num: int) -> void:
+	if not unlocked_notes.has(page_num):
+		unlocked_notes.append(page_num)
+		unlocked_notes.sort()

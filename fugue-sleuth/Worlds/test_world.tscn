@@ -140,6 +140,18 @@ use_collision = true
 size = Vector3(14.332031, 8.788513, 1)
 material = SubResource("StandardMaterial3D_tbl1j")
 
+[node name="movingWall" type="CSGBox3D" parent="WorldEnvironment/TestLevel" unique_id=1703929718]
+transform = Transform3D(-3.6192343e-08, 0, 1, 0, 1, 0, -0.82798433, 0, -4.371139e-08, 18.02776, 4.8282843, -1.955547)
+use_collision = true
+size = Vector3(14.332031, 8.788513, 1)
+material = SubResource("StandardMaterial3D_tbl1j")
+
+[node name="Wall3" type="CSGBox3D" parent="WorldEnvironment/TestLevel" unique_id=1526773466]
+transform = Transform3D(0.8268062, 0, 0.053328004, 0, 1, 0, -0.044154752, 0, 0.99857706, 14.55339, 4.8282843, -7.931114)
+use_collision = true
+size = Vector3(20.95691, 8.788513, 1)
+material = SubResource("StandardMaterial3D_tbl1j")
+
 [node name="John Detective" parent="." unique_id=934400168 instance=ExtResource("1_3xrbq")]
 transform = Transform3D(-0.8917308, 0, 0.4525663, 0, 1, 0, -0.4525663, 0, -0.8917308, 14.884904, 0.9016597, -3.5083103)
 
