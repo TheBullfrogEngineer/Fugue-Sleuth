@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://j0ixb01qc4rs" path="res://Menus/MainQMenu/Notepad.tscn" id="2_0n0fo"]
 [ext_resource type="Texture2D" uid="uid://b5ikrlsu5c4he" path="res://Blender/Textures/Wall.jpg" id="2_ypwe8"]
 [ext_resource type="Script" uid="uid://d28dbn42wehct" path="res://Interactable System/InteractableObject.gd" id="3_jbqd0"]
+[ext_resource type="AudioStream" uid="uid://chj7yg1h5upb" path="res://Audio/Music/DetectiveMusic.mp3" id="6_ypwe8"]
 
 [sub_resource type="Environment" id="Environment_4ayxd"]
 
@@ -178,5 +179,11 @@ libraries/ = SubResource("AnimationLibrary_mgyxc")
 [node name="InteractableObject" type="Node" parent="StaticBody3D" unique_id=2050103547]
 script = ExtResource("3_jbqd0")
 metadata/_custom_type_script = "uid://d28dbn42wehct"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1192719182]
+stream = ExtResource("6_ypwe8")
+volume_db = -18.128
+autoplay = true
+parameters/looping = true
 
 [connection signal="interacted" from="StaticBody3D/InteractableObject" to="StaticBody3D/button/AnimationPlayer" method="play" binds= ["ButtonPress"]]
