@@ -25,19 +25,20 @@ func resume() -> void:
 	visible = false
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-
-# Just added Evidence. visible
+	
 func _on_notes_pressed() -> void:
 	$Control.visible = false
 	$Notes.visible = true
-	$Evidence.visible = false
+	$EvidencePage.visible = false
+
 
 func _on_evidence_pressed() -> void:
 	$Control.visible = false
 	$Notes.visible = false
-	$Evidence.visible = true
+	$EvidencePage.visible = true
+
 
 func _on_menu_pressed() -> void:
 	$Control.visible = true
 	$Notes.visible = false
-	$Evidence.visible = false
+	$EvidencePage.visible = false

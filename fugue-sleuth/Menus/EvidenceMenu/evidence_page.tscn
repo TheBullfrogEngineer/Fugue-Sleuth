@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://uj4atbekabdo"]
+
+[ext_resource type="Script" uid="uid://dc4wk88h3cxsu" path="res://Menus/EvidenceMenu/evidence_page.gd" id="1_vc5nk"]
+
+[node name="EvidencePage" type="Control" unique_id=704433167]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+script = ExtResource("1_vc5nk")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=269532867]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 653.0
+mouse_filter = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1455896344]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=925701477]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+columns = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1037553055]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=443963911]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1780779329]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=323389829]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=460305527]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1894812028]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=656865979]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1873213227]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Navigation" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=641985331]
+layout_mode = 2
+
+[node name="PreviousPage" type="Button" parent="MarginContainer/VBoxContainer/Navigation" unique_id=1333414185]
+layout_mode = 2
+
+[node name="NextPage" type="Button" parent="MarginContainer/VBoxContainer/Navigation" unique_id=1875010730]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Navigation/PreviousPage" to="." method="_on_previous_page_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Navigation/NextPage" to="." method="_on_next_page_pressed"]

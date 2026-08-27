@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://4pfvp0hcsow" path="res://Menus/SettingsMenu/Menu.tscn" id="1_82ir8"]
 [ext_resource type="Script" uid="uid://bf6sfucpr7wg0" path="res://Menus/MainQMenu/notepad.gd" id="1_amhaa"]
 [ext_resource type="PackedScene" uid="uid://by7fdj8xfet27" path="res://Menus/NotesMenu/notes.tscn" id="3_pe64q"]
+[ext_resource type="PackedScene" uid="uid://uj4atbekabdo" path="res://Menus/EvidenceMenu/evidence_page.tscn" id="4_2836c"]
 
 [node name="Control" type="Control" unique_id=101648911]
 process_mode = 3
@@ -42,6 +43,10 @@ text = "Evidence"
 [node name="Menu" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1281194936]
 layout_mode = 2
 text = "Menu"
+
+[node name="EvidencePage" parent="." unique_id=704433167 instance=ExtResource("4_2836c")]
+visible = false
+layout_mode = 0
 
 [node name="Control" parent="." unique_id=92778484 instance=ExtResource("1_82ir8")]
 visible = false
