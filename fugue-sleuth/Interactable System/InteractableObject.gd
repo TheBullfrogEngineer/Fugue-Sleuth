@@ -1,12 +1,13 @@
-class_name InteractableObject
+class_name EvidenceObject
+extends InteractableObject
 
-#This acts as a class that can be added as a child
-#to any component we want to make interactable
-
-extends Node
+@export var evidence_card: EvidenceCard
 
 
-signal interacted()
+func _ready() -> void:
+	interacted.connect(_on_interacted)
 
-func interact_with():
-	interacted.emit()
+
+func _on_interacted() -> void:
+	EvidenceManager.append_object(evidence_card)
+	print("Objetos en el manager: ", EvidenceManager.objects.size())

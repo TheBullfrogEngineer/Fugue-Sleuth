@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EvidenceCard" format=3 uid="uid://bu3yf0timgaqm"]
+
+[ext_resource type="Script" uid="uid://ckcs5xylm1la1" path="res://evidence_card.gd" id="1_30nn1"]
+[ext_resource type="Texture2D" uid="uid://cffjuptkhtd2d" path="res://icon.svg" id="2_ud27f"]
+
+[resource]
+script = ExtResource("1_30nn1")
+id = "0"
+display_name = "Evidence 1"
+visual = ExtResource("2_ud27f")
+metadata/_custom_type_script = "uid://ckcs5xylm1la1"

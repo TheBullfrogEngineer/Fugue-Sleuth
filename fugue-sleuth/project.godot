@@ -15,10 +15,18 @@ run/main_scene="uid://dw1bw6ttpuyyf"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EvidenceManager="*uid://dgygeceaia47j"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 

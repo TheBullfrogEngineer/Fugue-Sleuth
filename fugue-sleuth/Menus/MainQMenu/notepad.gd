@@ -1,5 +1,4 @@
 extends Control
-
 var is_paused = false
 
 func _ready() -> void:
@@ -8,13 +7,12 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Notepad"):
 		pause_toggle()
-		
+
 func pause_toggle():
 	if is_paused:
 		resume()
 	else:
 		pause()
-
 
 func pause() -> void:
 	is_paused = true
@@ -22,24 +20,24 @@ func pause() -> void:
 	get_tree().paused = true
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
-
 func resume() -> void:
 	is_paused = false
 	visible = false
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	
 
-#Everything down here works fine
+# Just added Evidence. visible
 func _on_notes_pressed() -> void:
 	$Control.visible = false
 	$Notes.visible = true
+	$Evidence.visible = false
 
 func _on_evidence_pressed() -> void:
 	$Control.visible = false
 	$Notes.visible = false
-
+	$Evidence.visible = true
 
 func _on_menu_pressed() -> void:
 	$Control.visible = true
 	$Notes.visible = false
+	$Evidence.visible = false
