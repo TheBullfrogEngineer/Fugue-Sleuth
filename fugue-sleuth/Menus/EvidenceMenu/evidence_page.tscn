@@ -34,7 +34,7 @@ columns = 4
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1037553055]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-mouse_filter = 2
+mouse_filter = 0
 expand_mode = 1
 stretch_mode = 5
 
@@ -45,7 +45,7 @@ horizontal_alignment = 1
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1780779329]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-mouse_filter = 2
+mouse_filter = 0
 expand_mode = 1
 stretch_mode = 5
 
@@ -56,7 +56,7 @@ horizontal_alignment = 1
 [node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=460305527]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-mouse_filter = 2
+mouse_filter = 0
 expand_mode = 1
 stretch_mode = 5
 
@@ -67,7 +67,7 @@ horizontal_alignment = 1
 [node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=656865979]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-mouse_filter = 2
+mouse_filter = 0
 expand_mode = 1
 stretch_mode = 5
 
@@ -83,6 +83,14 @@ layout_mode = 2
 
 [node name="NextPage" type="Button" parent="MarginContainer/VBoxContainer/Navigation" unique_id=1875010730]
 layout_mode = 2
+
+[node name="SelectedEvidence" type="TextureRect" parent="." unique_id=823708538]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Navigation/PreviousPage" to="." method="_on_previous_page_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Navigation/NextPage" to="." method="_on_next_page_pressed"]
