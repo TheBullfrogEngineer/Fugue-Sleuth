@@ -50,10 +50,12 @@ func _headbob_effect(delta):
 			
 func _process(delta):
 	if get_interactable_object_at_shapecast():
+		$Label2.visible = false
 		$Label.visible = true
 		if Input.is_action_just_pressed("interact"):
 			get_interactable_object_at_shapecast().interact_with()
 	else:
+		$Label2.visible = true
 		$Label.visible = false
 	
 func clip_velocity(normal: Vector3, overbounce : float, delta : float) -> void:
@@ -113,7 +115,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Crouch"):
 		%CollisionShape3D.shape.height = 0.3
 	else:
-		%CollisionShape3D.shape.height = 1
+		%CollisionShape3D.shape.height = 2
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump") or (auto_bhop and Input.is_action_pressed("jump")):

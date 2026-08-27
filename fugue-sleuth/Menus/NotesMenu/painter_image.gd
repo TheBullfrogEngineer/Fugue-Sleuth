@@ -2,7 +2,7 @@ extends Sprite2D
 
 @export var paint_color : Color = Color.BLACK
 @export var img_size := Vector2i(800, 1100)
-@export var brush_size := 2
+@export var brush_size := 1
 
 var imgs : Array[Image] = []
 var page := 0

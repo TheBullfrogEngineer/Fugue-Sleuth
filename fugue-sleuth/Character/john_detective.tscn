@@ -1,32 +1,102 @@
 [gd_scene format=3 uid="uid://ccur52qjwyt7v"]
 
 [ext_resource type="Script" uid="uid://dytwap4e0xfc" path="res://Character/john_detective.gd" id="1_nx3uc"]
+[ext_resource type="Texture2D" uid="uid://1alhgwhm8n6o" path="res://Character/Left1.png" id="2_5govx"]
+[ext_resource type="Texture2D" uid="uid://bs1fnr6xb13ro" path="res://Character/Left2.png" id="3_j5gm7"]
+[ext_resource type="Texture2D" uid="uid://bd867y0daf0ce" path="res://Character/Left3.png" id="4_q4e88"]
+[ext_resource type="Texture2D" uid="uid://celay0yofusdy" path="res://Character/Right1.png" id="5_oopl0"]
+[ext_resource type="Texture2D" uid="uid://dfx06aq5wpwxx" path="res://Character/right2.png" id="6_kgbqg"]
+[ext_resource type="Texture2D" uid="uid://dg6rxflkuk0oi" path="res://Character/right3.png" id="7_3xlxg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ayxd"]
+height = 3.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ggs6p"]
+height = 3.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4ayxd"]
 radius = 0.25
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ayxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5govx")
+}],
+"loop": 1,
+"name": &"LeftIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5govx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j5gm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q4e88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j5gm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5govx")
+}],
+"loop": 1,
+"name": &"LeftRun",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggs6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_oopl0")
+}],
+"loop": 1,
+"name": &"RightIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_oopl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kgbqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3xlxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kgbqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oopl0")
+}],
+"loop": 1,
+"name": &"RightRun",
+"speed": 5.0
+}]
 
 [node name="John Detective" type="CharacterBody3D" unique_id=934400168]
 script = ExtResource("1_nx3uc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1904148566]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4679909, 0)
 shape = SubResource("CapsuleShape3D_4ayxd")
 
 [node name="WorldModel" type="Node3D" parent="." unique_id=1563981028]
 unique_name_in_owner = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WorldModel" unique_id=1902436628]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.999521, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4858792, 0)
 mesh = SubResource("CapsuleMesh_ggs6p")
 
 [node name="Head" type="Node3D" parent="." unique_id=289795604]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1554231401]
 unique_name_in_owner = true
@@ -34,11 +104,29 @@ unique_name_in_owner = true
 [node name="InteractShapeCast3D" type="ShapeCast3D" parent="Head/Camera3D" unique_id=378902154]
 unique_name_in_owner = true
 shape = SubResource("SphereShape3D_4ayxd")
-target_position = Vector3(0, 0, -3)
+target_position = Vector3(0, 0, -3.5)
 max_results = 2
 collide_with_areas = true
 
+[node name="Label2" type="Label" parent="." unique_id=640901137]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -51.0
+offset_right = 33.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 50
+text = "."
+
 [node name="Label" type="Label" parent="." unique_id=2011973319]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -54,3 +142,23 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 25
 text = "\"E\" to Interact"
+
+[node name="Control" type="Control" parent="." unique_id=147155084]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left Hand" type="AnimatedSprite2D" parent="Control" unique_id=919891838]
+position = Vector2(361.99997, 253.00009)
+scale = Vector2(1.3529965, 1.0915084)
+sprite_frames = SubResource("SpriteFrames_4ayxd")
+animation = &"LeftIdle"
+autoplay = "LeftIdle"
+
+[node name="RightHand" type="AnimatedSprite2D" parent="Control" unique_id=1356353393]
+position = Vector2(886, 327)
+scale = Vector2(1.0758427, 0.907964)
+sprite_frames = SubResource("SpriteFrames_ggs6p")
+animation = &"RightIdle"
+autoplay = "RightIdle"

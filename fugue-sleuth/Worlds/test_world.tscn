@@ -1,14 +1,18 @@
 [gd_scene format=4 uid="uid://dw1bw6ttpuyyf"]
 
 [ext_resource type="PackedScene" uid="uid://ccur52qjwyt7v" path="res://Character/john_detective.tscn" id="1_3xrbq"]
+[ext_resource type="Texture2D" uid="uid://bdtv6nrwjf21p" path="res://Blender/Textures/Cloth.jpg" id="1_7u6cd"]
 [ext_resource type="PackedScene" uid="uid://j0ixb01qc4rs" path="res://Menus/MainQMenu/Notepad.tscn" id="2_0n0fo"]
+[ext_resource type="Texture2D" uid="uid://b5ikrlsu5c4he" path="res://Blender/Textures/Wall.jpg" id="2_ypwe8"]
 [ext_resource type="Script" uid="uid://d28dbn42wehct" path="res://Interactable System/InteractableObject.gd" id="3_jbqd0"]
 
 [sub_resource type="Environment" id="Environment_4ayxd"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ayxd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u04th"]
+albedo_texture = ExtResource("1_7u6cd")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggs6p"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbl1j"]
+albedo_texture = ExtResource("2_ypwe8")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jbqd0"]
 points = PackedVector3Array(0.92640513, 0.97289425, -0.27474937, -0.9611454, -0.9757169, -0.21457356, -0.9265894, -0.9716164, -0.2744302, 0.8732503, -0.98141736, 0.45889062, -0.3564199, 0.99029255, 0.92759985, -0.046497393, 0.9820154, -0.9830734, 0.630367, -0.98518467, -0.770526, -0.3564199, -0.99029255, 0.92759985, -0.9651565, 0.97979176, -0.062220655, 0.37861463, 0.97106767, 0.9089758, -0.63143647, -0.98466545, -0.77013665, -0.8428903, -0.9801098, 0.51939183, -0.63143647, 0.98466545, -0.77013665, 0.8732503, 0.98141736, 0.45889062, 0.37861463, -0.97106767, 0.9089758, 0.9610066, -0.9770002, -0.21481402, 0.630367, 0.98518467, -0.770526, 0.045305587, -0.98246324, -0.9835073, -0.8428903, 0.9801098, 0.51939183, 0.96516436, 0.981224, -0.062265202, -0.9611454, 0.9757169, -0.21457356, 0.842276, -0.98102653, 0.5199073, -0.8734064, -0.9800183, 0.45800528, 0.045305587, 0.98246324, -0.9835073, -0.046497393, -0.9820154, -0.9830734, -0.9651565, -0.97979176, -0.062220655, 0.96516436, -0.981224, -0.062265202, 0.842276, 0.98102653, 0.5199073, -0.8734064, 0.9800183, 0.45800528, 0.65918314, -0.98229694, -0.73762167, -0.6597184, 0.9810067, -0.7366945, 0.9610066, 0.9770002, -0.21481402)
@@ -107,30 +111,40 @@ environment = SubResource("Environment_4ayxd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1400096253]
 transform = Transform3D(-0.86753637, -0.42955074, 0.25073266, -0.35514086, 0.88791543, 0.2923717, -0.34821787, 0.16459765, -0.92284995, 0, 32.44034, 24.705898)
+light_color = Color(0.22845411, 0.16121739, 0.003278065, 1)
 light_energy = 0.4
+light_indirect_energy = 5.815
+light_volumetric_fog_energy = 16.395
 shadow_enabled = true
+shadow_blur = 1.97
 
 [node name="TestLevel" type="Node3D" parent="WorldEnvironment" unique_id=1848478467]
 
 [node name="Floor" type="CSGBox3D" parent="WorldEnvironment/TestLevel" unique_id=1650739439]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10917711, -5.42073, -0.041353226)
 use_collision = true
 size = Vector3(100, 12, 100)
-material = SubResource("StandardMaterial3D_4ayxd")
+material = SubResource("StandardMaterial3D_u04th")
 
 [node name="Wall" type="CSGBox3D" parent="WorldEnvironment/TestLevel" unique_id=756956463]
-transform = Transform3D(0.82798433, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 5.1479416)
+transform = Transform3D(0.82798433, 0, 0, 0, 1, 0, 0, 0, 1, 12.717094, 4.854388, 4.3216114)
 use_collision = true
-size = Vector3(50, 25, 1)
-material = SubResource("StandardMaterial3D_ggs6p")
+size = Vector3(14.332031, 8.788513, 1)
+material = SubResource("StandardMaterial3D_tbl1j")
+
+[node name="Wall2" type="CSGBox3D" parent="WorldEnvironment/TestLevel" unique_id=317110443]
+transform = Transform3D(-3.6192343e-08, 0, 1, 0, 1, 0, -0.82798433, 0, -4.371139e-08, 6.3011274, 4.8282843, -1.1302401)
+use_collision = true
+size = Vector3(14.332031, 8.788513, 1)
+material = SubResource("StandardMaterial3D_tbl1j")
 
 [node name="John Detective" parent="." unique_id=934400168 instance=ExtResource("1_3xrbq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9016597, 0)
+transform = Transform3D(-0.8917308, 0, 0.4525663, 0, 1, 0, -0.4525663, 0, -0.8917308, 14.884904, 0.9016597, -3.5083103)
 
 [node name="Control" parent="." unique_id=101648911 instance=ExtResource("2_0n0fo")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=293625525]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.666547, 2.5189052, 4.190732)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.666547, 2.5189052, 3.4932222)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=825162549]
 transform = Transform3D(1, 0, 0, 0, 0.44818795, 0, 0, 0, 1, 0, 0, 0)
