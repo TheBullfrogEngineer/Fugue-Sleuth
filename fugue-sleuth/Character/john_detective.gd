@@ -55,10 +55,26 @@ func _process(delta):
 		$Label2.visible = false
 		$Label.visible = true
 		if Input.is_action_just_pressed("interact"):
+			$Control/RightHand.frame = 1
+			$Timer.start()
 			get_interactable_object_at_shapecast().interact_with()
 	else:
 		$Label2.visible = true
 		$Label.visible = false
+	if velocity.x != 0 or velocity.z != 0 or velocity.y != 0:
+		$Control/LeftRun.visible = true
+		$"Control/LeftHand".visible = false
+		$"Control/RightRun".visible = true
+		$Control/RightHand.visible = false
+	else:
+		$Control/LeftRun.visible = false
+		$"Control/LeftHand".visible = true
+		$"Control/RightRun".visible = false
+		if get_interactable_object_at_shapecast():
+			if Input.is_action_just_pressed("interact"):
+				$Control/RightHand.visible = false
+		
+		$Control/RightHand.visible = true		
 	
 func clip_velocity(normal: Vector3, overbounce : float, delta : float) -> void:
 	var backoff:= self.velocity.dot(normal) * overbounce
@@ -120,7 +136,6 @@ func _physics_process(delta):
 		elif is_crouching == true:
 			movement_state_change("uncrouch")
 		
-	
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump") or (auto_bhop and Input.is_action_pressed("jump")):
 			self.velocity.y = jump_velocity
@@ -162,3 +177,7 @@ func change_collision_shape(shape):
 			%CrouchingCollisionShape.disabled = true
 			%CollisionShape3D.disabled = false
 	
+
+
+func _on_timer_timeout() -> void:
+	$Control/RightHand.frame = 0

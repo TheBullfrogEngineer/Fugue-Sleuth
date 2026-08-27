@@ -3,9 +3,13 @@
 [ext_resource type="Script" uid="uid://dytwap4e0xfc" path="res://Character/john_detective.gd" id="1_nx3uc"]
 [ext_resource type="Texture2D" uid="uid://1alhgwhm8n6o" path="res://Character/Left1.png" id="2_5govx"]
 [ext_resource type="Texture2D" uid="uid://bs1fnr6xb13ro" path="res://Character/Left2.png" id="3_j5gm7"]
+[ext_resource type="Texture2D" uid="uid://bywbcwa3rpp66" path="res://Character/Interact2.png" id="4_3xlxg"]
+[ext_resource type="Texture2D" uid="uid://cifdy6ei6le1m" path="res://Character/Interact3.png" id="4_go8ou"]
 [ext_resource type="Texture2D" uid="uid://bd867y0daf0ce" path="res://Character/Left3.png" id="4_q4e88"]
+[ext_resource type="Texture2D" uid="uid://c7b7ggita2l3o" path="res://Character/Interact.png" id="5_j5gm7"]
 [ext_resource type="Texture2D" uid="uid://celay0yofusdy" path="res://Character/Right1.png" id="5_oopl0"]
 [ext_resource type="Texture2D" uid="uid://dfx06aq5wpwxx" path="res://Character/right2.png" id="6_kgbqg"]
+[ext_resource type="Texture2D" uid="uid://dajhkatfmq74m" path="res://Character/Interact3(different Angle).png" id="6_nnnsa"]
 [ext_resource type="Texture2D" uid="uid://dg6rxflkuk0oi" path="res://Character/right3.png" id="7_3xlxg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ayxd"]
@@ -23,11 +27,43 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_5govx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j5gm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q4e88")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"LeftIdle",
 "speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggs6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_oopl0")
 }, {
+"duration": 1.0,
+"texture": ExtResource("4_go8ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nnnsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3xlxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j5gm7")
+}],
+"loop": 1,
+"name": &"RightIdle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dim44"]
+animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_5govx")
@@ -37,35 +73,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_q4e88")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_j5gm7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_5govx")
 }],
-"loop": 1,
-"name": &"LeftRun",
+"loop": 2,
+"name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ggs6p"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_q4e88"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_oopl0")
-}],
-"loop": 1,
-"name": &"RightIdle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_oopl0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_kgbqg")
-}, {
 "duration": 1.0,
 "texture": ExtResource("7_3xlxg")
 }, {
@@ -75,8 +91,8 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_oopl0")
 }],
-"loop": 1,
-"name": &"RightRun",
+"loop": 2,
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -97,7 +113,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_oopl0"]
 resource_name = "standing_to_crouch"
-length = 0.19999999999999998
+length = 0.2
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -192,19 +208,34 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Left Hand" type="AnimatedSprite2D" parent="Control" unique_id=919891838]
-position = Vector2(361.99997, 253.00009)
+[node name="LeftHand" type="AnimatedSprite2D" parent="Control" unique_id=919891838]
+position = Vector2(361.99997, 205.00009)
 scale = Vector2(1.3529965, 1.0915084)
 sprite_frames = SubResource("SpriteFrames_4ayxd")
 animation = &"LeftIdle"
-autoplay = "LeftIdle"
 
 [node name="RightHand" type="AnimatedSprite2D" parent="Control" unique_id=1356353393]
-position = Vector2(886, 327)
+position = Vector2(876.99994, 282.99994)
 scale = Vector2(1.0758427, 0.907964)
 sprite_frames = SubResource("SpriteFrames_ggs6p")
 animation = &"RightIdle"
-autoplay = "RightIdle"
+
+[node name="LeftRun" type="AnimatedSprite2D" parent="Control" unique_id=1072144487]
+visible = false
+position = Vector2(207.00009, 559)
+rotation = 0.5270894
+sprite_frames = SubResource("SpriteFrames_dim44")
+autoplay = "default"
+frame_progress = 0.24884929
+
+[node name="RightRun" type="AnimatedSprite2D" parent="Control" unique_id=1230167420]
+visible = false
+position = Vector2(1026.0638, 590.3384)
+rotation = -0.5235988
+scale = Vector2(0.92318183, 1.0156064)
+sprite_frames = SubResource("SpriteFrames_q4e88")
+autoplay = "default"
+frame_progress = 0.48488835
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=454212686]
 libraries/ = SubResource("AnimationLibrary_kgbqg")
@@ -214,3 +245,8 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23211795, 0)
 shape = SubResource("CapsuleShape3D_oopl0")
 disabled = true
+
+[node name="Timer" type="Timer" parent="." unique_id=507603857]
+wait_time = 0.15
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
