@@ -76,6 +76,7 @@ func _process(delta):
 		
 		$Control/RightHand.visible = true		
 	
+	
 func clip_velocity(normal: Vector3, overbounce : float, delta : float) -> void:
 	var backoff:= self.velocity.dot(normal) * overbounce
 	if backoff >= 0: return

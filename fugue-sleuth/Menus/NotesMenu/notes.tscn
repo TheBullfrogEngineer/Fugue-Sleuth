@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dgmp0nr768a0m" path="res://Menus/NotesMenu/Pages/page_8.gd" id="10_rpyfp"]
 [ext_resource type="Script" uid="uid://c3awe645ognhe" path="res://Menus/NotesMenu/Pages/page_9.gd" id="11_v2bhy"]
 [ext_resource type="Script" uid="uid://gtlir8d56b2h" path="res://Menus/NotesMenu/Pages/page_10.gd" id="12_rpyfp"]
+[ext_resource type="AudioStream" uid="uid://xf4ixnsk2feg" path="res://Audio/SFX/book/book_flipping_a.wav" id="13_0421b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8as4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -318,6 +319,9 @@ offset_right = 164.0
 offset_bottom = 34.0
 text = "Previous Page
 "
+
+[node name="NewPage" type="AudioStreamPlayer3D" parent="." unique_id=1554181447]
+stream = ExtResource("13_0421b")
 
 [connection signal="text_changed" from="Panel/Page1" to="Panel/Page1" method="_on_text_changed"]
 [connection signal="text_changed" from="Panel/Page2" to="Panel/Page2" method="_on_text_changed"]

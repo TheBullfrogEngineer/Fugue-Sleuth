@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://bf6sfucpr7wg0" path="res://Menus/MainQMenu/notepad.gd" id="1_amhaa"]
 [ext_resource type="PackedScene" uid="uid://by7fdj8xfet27" path="res://Menus/NotesMenu/notes.tscn" id="3_pe64q"]
 [ext_resource type="PackedScene" uid="uid://uj4atbekabdo" path="res://Menus/EvidenceMenu/evidence_page.tscn" id="4_2836c"]
+[ext_resource type="AudioStream" uid="uid://dth1gm8nvboyw" path="res://Audio/SFX/book/book_flipping_b.wav" id="5_lps87"]
+[ext_resource type="AudioStream" uid="uid://divfvx6vbnwkx" path="res://Audio/SFX/book/book_flipping_c.wav" id="6_45ep4"]
+[ext_resource type="AudioStream" uid="uid://xf4ixnsk2feg" path="res://Audio/SFX/book/book_flipping_a.wav" id="7_7lq3q"]
 
 [node name="Control" type="Control" unique_id=101648911]
 process_mode = 3
@@ -62,6 +65,15 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 400.0
 offset_bottom = 550.0
+
+[node name="Open" type="AudioStreamPlayer3D" parent="." unique_id=1533602899]
+stream = ExtResource("5_lps87")
+
+[node name="Close" type="AudioStreamPlayer3D" parent="." unique_id=399380545]
+stream = ExtResource("6_45ep4")
+
+[node name="NewPage" type="AudioStreamPlayer3D" parent="." unique_id=1845249254]
+stream = ExtResource("7_7lq3q")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Notes" to="." method="_on_notes_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Evidence" to="." method="_on_evidence_pressed"]

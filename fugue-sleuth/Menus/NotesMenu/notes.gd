@@ -27,6 +27,7 @@ func _update_page_visibility() -> void:
 	var active_page = get_node("Panel/Page" + str(active_page_number))
 	if active_page != null:
 		active_page.visible = true
+	$"../NewPage".play()
 	$PainterImage.check_page()
 
 func unlock_new_note(page_num: int) -> void:

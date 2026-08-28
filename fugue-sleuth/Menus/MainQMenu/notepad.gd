@@ -10,8 +10,10 @@ func _input(event: InputEvent) -> void:
 
 func pause_toggle():
 	if is_paused:
+		$Close.play()
 		resume()
 	else:
+		$Open.play()
 		pause()
 
 func pause() -> void:
