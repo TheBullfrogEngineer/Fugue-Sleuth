@@ -9,6 +9,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 mouse_filter = 2
 script = ExtResource("1_vc5nk")
+forgotten_time = 3.0
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=269532867]
 layout_mode = 0
