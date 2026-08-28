@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://vpfkpnwlmsgy"]
+
+[ext_resource type="Script" uid="uid://bo65a1gpydixs" path="res://Interactable System/physicalnotepad.gd" id="1_netwm"]
+[ext_resource type="Texture2D" uid="uid://7e3uw13qi0ba" path="res://Blender/Textures/Book.png" id="2_1v1sd"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i1h2n"]
+points = PackedVector3Array(-0.1362, -0.4798118, -0.19627267, 0.1362, 0.4889113, 0.19719402, -0.1362, 0.4798118, 0.19349808, 0.1362, -0.4889113, 0.19719402, 0.13608326, 0.48849615, -0.1998, 0.13608326, -0.48849615, -0.1998, -0.1362, 0.4798118, -0.19627267, -0.1362, -0.4798118, 0.19349808)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umdps"]
+albedo_texture = ExtResource("2_1v1sd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ggs6p"]
+size = Vector3(0.27233887, 1, 0.3996582)
+
+[node name="Notepad" type="Node3D" unique_id=946014723]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1405645914]
+script = ExtResource("1_netwm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1331875161]
+transform = Transform3D(1.3321726, 0, 0, 0, 0.049964923, 0, 0, 0, 1.327014, 0.36383057, 0, 0.3001709)
+shape = SubResource("ConvexPolygonShape3D_i1h2n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1417008447]
+transform = Transform3D(1.3321726, 0, 0, 0, 0.049964923, 0, 0, 0, 1.327014, 0.36383057, 0, 0.3001709)
+material_override = SubResource("StandardMaterial3D_umdps")
+mesh = SubResource("BoxMesh_ggs6p")

@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dw1bw6ttpuyyf"]
 
 [ext_resource type="PackedScene" uid="uid://ccur52qjwyt7v" path="res://Character/john_detective.tscn" id="1_3xrbq"]
+[ext_resource type="Script" uid="uid://daermi5xs4xuc" path="res://Worlds/test_world.gd" id="1_5mb5f"]
 [ext_resource type="Texture2D" uid="uid://bdtv6nrwjf21p" path="res://Blender/Textures/Cloth.jpg" id="1_7u6cd"]
 [ext_resource type="PackedScene" uid="uid://j0ixb01qc4rs" path="res://Menus/MainQMenu/Notepad.tscn" id="2_0n0fo"]
 [ext_resource type="Texture2D" uid="uid://b5ikrlsu5c4he" path="res://Blender/Textures/Wall.jpg" id="2_ypwe8"]
@@ -8,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://bu3yf0timgaqm" path="res://Interactable System/evidence_1.tres" id="6_u04th"]
 [ext_resource type="AudioStream" uid="uid://chj7yg1h5upb" path="res://Audio/Music/DetectiveMusic.mp3" id="6_ypwe8"]
 [ext_resource type="PackedScene" uid="uid://c85frmreni5v1" path="res://Interactable System/door.tscn" id="8_tbl1j"]
+[ext_resource type="PackedScene" uid="uid://vpfkpnwlmsgy" path="res://Interactable System/notepad.tscn" id="9_21ahh"]
 
 [sub_resource type="Environment" id="Environment_4ayxd"]
 
@@ -108,6 +110,7 @@ _data = {
 }
 
 [node name="TestWorld" type="Node3D" unique_id=943294314]
+script = ExtResource("1_5mb5f")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=642467113]
 environment = SubResource("Environment_4ayxd")
@@ -124,7 +127,7 @@ shadow_blur = 1.97
 [node name="TestLevel" type="Node3D" parent="WorldEnvironment" unique_id=1848478467]
 
 [node name="Floor" type="CSGBox3D" parent="WorldEnvironment/TestLevel" unique_id=1650739439]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10917711, -5.42073, -0.041353226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1267072, -5.4207296, -0.042393684)
 use_collision = true
 size = Vector3(100, 12, 100)
 material = SubResource("StandardMaterial3D_u04th")
@@ -202,5 +205,8 @@ autoplay = true
 parameters/looping = true
 
 [node name="Door" parent="." unique_id=389276268 instance=ExtResource("8_tbl1j")]
+
+[node name="Notepad" parent="." unique_id=946014723 instance=ExtResource("9_21ahh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4959512, -12.1423855)
 
 [connection signal="interacted" from="StaticBody3D/InteractableObject" to="StaticBody3D/button/AnimationPlayer" method="play" binds= ["ButtonPress"]]

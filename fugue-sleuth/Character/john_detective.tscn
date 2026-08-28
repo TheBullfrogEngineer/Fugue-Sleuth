@@ -139,6 +139,7 @@ radius = 0.15
 height = 0.5
 
 [node name="John Detective" type="CharacterBody3D" unique_id=934400168]
+visible = false
 script = ExtResource("1_nx3uc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1904148566]

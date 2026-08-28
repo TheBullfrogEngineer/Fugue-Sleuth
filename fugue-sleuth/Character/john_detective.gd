@@ -1,4 +1,5 @@
 extends CharacterBody3D
+signal give_notes
 
 @export var look_sensitivity : float = 0.006
 @export var jump_velocity : = 6.0
@@ -71,7 +72,15 @@ func _process(delta):
 				hitObj.interact()
 				$Control/RightHand.frame = 1
 				$Timer.start()
-		else:
+		elif hitObj.has_method("notepad"):
+			$Label2.visible = false
+			$Label.visible = true
+			if Input.is_action_just_pressed("interact"):
+				hitObj.notepad()
+				$Control/RightHand.frame = 1
+				$Timer.start()
+				give_notes.emit()
+		else:	
 			$Label2.visible = true
 			$Label.visible = false
 	if velocity.x != 0 or velocity.z != 0 or velocity.y != 0:
