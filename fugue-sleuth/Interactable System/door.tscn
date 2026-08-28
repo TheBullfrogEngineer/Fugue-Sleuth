@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://c85frmreni5v1"]
+
+[ext_resource type="Script" uid="uid://cqf3n4h3xqmdv" path="res://Interactable System/door.gd" id="1_um285"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7lqb0"]
+points = PackedVector3Array(1.5555556, 2.5386884, 0.17777777, -1.5396826, -2.5386884, -0.13968253, -1.5396826, -2.5386884, 0.17777777, -1.5396826, 2.5386884, -0.13968253, 1.5555556, -2.5386884, -0.13968253, 1.5555556, -2.5386884, 0.17777777, -1.5396826, 2.5386884, 0.17777777, 1.5555556, 2.5386884, -0.13968253)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ayxd"]
+size = Vector3(3, 5, 0.2)
+
+[sub_resource type="Animation" id="Animation_k22qh"]
+resource_name = "Close"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hinge:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(2.3286986, -0.25, 0, 0.25, 0, 0, -0.050000004, 0.38811648, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hinge:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_um285"]
+resource_name = "Open"
+length = 1.0333333
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.083333336, 0, 0, 0, 0, -0.041666668, 0, 0, 0, 0, -0.03333333, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 0.75, 0.95)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hinge:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 3.077693, -0.083333336, -0.5129489, 0, 0, 2.5262003, -0.041666668, 0.09191545, 0, 0, 2.3286986, -0.03333333, 0.032916944, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 0.75, 0.95)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hinge:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.083333336, 0, 0, 0, 0, -0.041666668, 0, 0, 0, 0, -0.03333333, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 0.75, 0.95)
+}
+
+[sub_resource type="Animation" id="Animation_cry1u"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hinge:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hinge:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k22qh"]
+_data = {
+&"Close": SubResource("Animation_k22qh"),
+&"Open": SubResource("Animation_um285"),
+&"RESET": SubResource("Animation_cry1u")
+}
+
+[node name="Door" type="Node3D" unique_id=389276268]
+
+[node name="hinge" type="Node3D" parent="." unique_id=2084770055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4995426, 0.0024521723, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hinge" unique_id=1460569505]
+script = ExtResource("1_um285")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/StaticBody3D" unique_id=1501314626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
+shape = SubResource("ConvexPolygonShape3D_7lqb0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hinge" unique_id=1117994901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
+mesh = SubResource("BoxMesh_4ayxd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=71795368]
+libraries/ = SubResource("AnimationLibrary_k22qh")
+
+[node name="Timer" type="Timer" parent="." unique_id=1432052764]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="hinge/StaticBody3D" method="_on_timer_timeout"]

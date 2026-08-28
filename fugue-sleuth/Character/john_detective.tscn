@@ -167,6 +167,10 @@ target_position = Vector3(0, 0, -3.5)
 max_results = 2
 collide_with_areas = true
 
+[node name="DoorInteract" type="RayCast3D" parent="Head/Camera3D" unique_id=201160642]
+transform = Transform3D(4, 0, 0, 0, -1.7484555e-07, -4, 0, 4, -1.7484555e-07, 0, 0, -0.21693218)
+collide_with_areas = true
+
 [node name="Label2" type="Label" parent="." unique_id=640901137]
 anchors_preset = 8
 anchor_left = 0.5
@@ -247,6 +251,6 @@ shape = SubResource("CapsuleShape3D_oopl0")
 disabled = true
 
 [node name="Timer" type="Timer" parent="." unique_id=507603857]
-wait_time = 0.15
+wait_time = 0.25
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

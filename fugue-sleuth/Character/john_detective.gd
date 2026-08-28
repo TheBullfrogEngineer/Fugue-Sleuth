@@ -61,6 +61,19 @@ func _process(delta):
 	else:
 		$Label2.visible = true
 		$Label.visible = false
+		
+	if $Head/Camera3D/DoorInteract.is_colliding():
+		var hitObj =$Head/Camera3D/DoorInteract.get_collider()
+		if hitObj.has_method("interact"):
+			$Label2.visible = false
+			$Label.visible = true
+			if Input.is_action_just_pressed("interact"):
+				hitObj.interact()
+				$Control/RightHand.frame = 1
+				$Timer.start()
+		else:
+			$Label2.visible = true
+			$Label.visible = false
 	if velocity.x != 0 or velocity.z != 0 or velocity.y != 0:
 		$Control/LeftRun.visible = true
 		$"Control/LeftHand".visible = false
