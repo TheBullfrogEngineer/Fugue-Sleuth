@@ -117,7 +117,7 @@ environment = SubResource("Environment_4ayxd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1400096253]
 transform = Transform3D(-0.86753637, -0.42955074, 0.25073266, -0.35514086, 0.88791543, 0.2923717, -0.34821787, 0.16459765, -0.92284995, 0, 32.44034, 24.705898)
-light_color = Color(0.22845411, 0.16121739, 0.003278065, 1)
+light_color = Color(0.42167094, 0.30908903, 0.013177526, 1)
 light_energy = 0.4
 light_indirect_energy = 5.815
 light_volumetric_fog_energy = 16.395
@@ -207,6 +207,6 @@ parameters/looping = true
 [node name="Door" parent="." unique_id=389276268 instance=ExtResource("8_tbl1j")]
 
 [node name="Notepad" parent="." unique_id=946014723 instance=ExtResource("9_21ahh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4959512, -12.1423855)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.04528, 3.0388472, -1.6498569)
 
 [connection signal="interacted" from="StaticBody3D/InteractableObject" to="StaticBody3D/button/AnimationPlayer" method="play" binds= ["ButtonPress"]]
