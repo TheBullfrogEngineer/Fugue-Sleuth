@@ -26,7 +26,7 @@ func resume() -> void:
 	is_paused = false
 	visible = false
 	get_tree().paused = false
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func notes_visible():
 	$PanelContainer/VBoxContainer/Notes.visible = true

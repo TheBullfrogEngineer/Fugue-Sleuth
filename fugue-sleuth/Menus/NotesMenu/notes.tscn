@@ -56,6 +56,11 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
+text = "Use 'WASD' to move
+Press 'Q' to open and close the menu
+Draw in these notes by holding left click and dragging your mouse
+Write by clicking and typing
+Press 'E' to interact"
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false

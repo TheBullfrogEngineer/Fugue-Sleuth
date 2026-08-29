@@ -52,6 +52,8 @@ func _headbob_effect(delta):
 	)
 			
 func _process(delta):
+	if Input.is_action_just_pressed("Notepad"):
+		$Label3.visible = false
 	if get_interactable_object_at_shapecast():
 		$Label2.visible = false
 		$Label.visible = true
@@ -78,6 +80,7 @@ func _process(delta):
 			if Input.is_action_just_pressed("interact"):
 				hitObj.notepad()
 				give_notes.emit()
+				$Label3.visible = true
 				$Control/RightHand.frame = 1
 				$Timer.start()
 		elif hitObj.has_method("elevator"):
