@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dk1ekicvs31y1" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/toilet.glb" id="11_ful4x"]
 [ext_resource type="PackedScene" uid="uid://ca6njkwydir2d" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/shower.glb" id="12_ktmrq"]
 [ext_resource type="Script" uid="uid://co66l6ptpjbnc" path="res://Interactable.gd" id="13_ev6f0"]
+[ext_resource type="AudioStream" uid="uid://bfel3vjjqm5r8" path="res://Cutscenes/voice_lines/ImtheKiller.mp3" id="14_6u6t0"]
 [ext_resource type="Script" uid="uid://dkubgn6ict1bg" path="res://Cutscenes/closing.gd" id="14_or1n8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mo6lj"]
@@ -671,6 +672,21 @@ tracks/2/keys = {
 "update": 0,
 "values": [75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 44.3, 44.3, 25.4]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_6u6t0")
+}],
+"times": PackedFloat32Array(0.79999995)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6u6t0"]
 _data = {
@@ -933,3 +949,7 @@ metadata/_custom_type_script = "uid://co66l6ptpjbnc"
 libraries/ = SubResource("AnimationLibrary_6u6t0")
 autoplay = &"close_scene"
 script = ExtResource("14_or1n8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=410576530]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_finished"]
