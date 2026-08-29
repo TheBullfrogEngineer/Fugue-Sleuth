@@ -59,11 +59,13 @@ theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.2588235
 theme_override_fonts/font = ExtResource("3_xvd7t")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_7w2tp")
-text = "WASD to Move
-E to Interact
-Shift to Sprint
-CTRL to Crouch
-Q to Open/Close Menu
+text = "WASD (left stick) to Move
+E (RB) to Interact
+Shift (B) to Sprint
+CTRL (Y) to Crouch
+Q (LB) to Open/Close Menu
+space (a) to jump
+
 
 You can Type and Draw Here
 No deleting mistakes, you are using a pen!
