@@ -1130,14 +1130,26 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lshtc"]
 albedo_texture = ExtResource("2_2fuiq")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssjjd"]
+size = Vector3(1.8729854, 1.2046661, 0.44873238)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kom0q"]
+size = Vector3(1.232543, 1.2046661, 0.44873238)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c54il"]
+size = Vector3(4.086422, 1.2046661, 0.44873238)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7esav"]
+size = Vector3(1.5786095, 0.7968292, 0.48633003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ad41q"]
+size = Vector3(1.144516, 0.7968292, 2.0380898)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_edb3s"]
+size = Vector3(1.375946, 1.3399963, 2.7451248)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_rddtw"]
-size = Vector3(2.5839844, 2.8218994, 2.8916626)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dim44"]
-size = Vector3(6.061157, 2.6690674, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vl740"]
-size = Vector3(6.061157, 2.6690674, 1)
+size = Vector3(0.97454834, 5.098938, 2.0998688)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ayxd"]
 height = 5.0
@@ -3496,6 +3508,9 @@ mesh = ExtResource("16_sm6r6")
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 156.92474, -0.15953255, 51.9002)
 mesh = ExtResource("17_1op6p")
 
+[node name="rugRounded2" parent="HotelLobby" unique_id=1042490726 instance=ExtResource("18_56xcf")]
+transform = Transform3D(24, 0, 0, 0, 24, 0, 0, 0, 24, 123.375336, -0.18577576, 31.916088)
+
 [node name="rugRounded" parent="HotelLobby" unique_id=1608575860 instance=ExtResource("18_56xcf")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 148.87209, -0.15953016, 48.09774)
 
@@ -3671,6 +3686,48 @@ transform = Transform3D(-2.7351182, 0, -6.443534, 0, 7, 0, 6.443534, 0, -2.73511
 [node name="computerScreen" parent="HotelLobby/Front Desk" unique_id=1388003870 instance=ExtResource("24_rtnoh")]
 transform = Transform3D(8.347416e-08, 0, -7, 0, 7, 0, 7, 0, 8.347416e-08, 119.946945, 2.0910263, 42.500973)
 
+[node name="StaticBody3D6" type="StaticBody3D" parent="HotelLobby/Front Desk" unique_id=1038241623]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/Front Desk/StaticBody3D6" unique_id=922197996]
+transform = Transform3D(2.3090868, 0, 0, 0, 1.950905, 0, 0, 0, 6.3822017, 153.91702, 0.4636587, 44.800358)
+shape = SubResource("BoxShape3D_ssjjd")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="HotelLobby/Front Desk" unique_id=132132312]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/Front Desk/StaticBody3D5" unique_id=271973803]
+transform = Transform3D(2.3090868, 0, 0, 0, 1.950905, 0, 0, 0, 6.3822017, 152.03374, 0.4636587, 50.24753)
+shape = SubResource("BoxShape3D_kom0q")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="HotelLobby/Front Desk" unique_id=126420102]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/Front Desk/StaticBody3D4" unique_id=1170779086]
+transform = Transform3D(2.3090868, 0, 0, 0, 1.950905, 0, 0, 0, 6.3822017, 155.27, 0.4636587, 53.1389)
+shape = SubResource("BoxShape3D_c54il")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="HotelLobby/Front Desk" unique_id=1377189411]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/Front Desk/StaticBody3D8" unique_id=770475654]
+transform = Transform3D(2.3090868, 0, 0, 0, 1.950905, 0, 0, 0, 6.3822017, 162.92088, -0.19818324, -4.382188)
+shape = SubResource("BoxShape3D_7esav")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="HotelLobby/Front Desk" unique_id=1515860693]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/Front Desk/StaticBody3D7" unique_id=849390156]
+transform = Transform3D(2.3090868, 0, 0, 0, 1.950905, 0, 0, 0, 6.3822017, 166.1066, -0.19818324, 0.5696337)
+shape = SubResource("BoxShape3D_ad41q")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="HotelLobby/Front Desk" unique_id=786967410]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/Front Desk/StaticBody3D3" unique_id=209800667]
+transform = Transform3D(2.3090868, 0, 0, 0, 1.950905, 0, 0, 0, 6.3822017, 161.73727, 0.3316505, 45.810883)
+shape = SubResource("BoxShape3D_edb3s")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="HotelLobby/Front Desk" unique_id=964984303]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/Front Desk/StaticBody3D2" unique_id=681444680]
+transform = Transform3D(2.3090868, 0, 0, 0, 1.950905, 0, 0, 0, 6.3822017, 171.7667, 3.9983194, 20.472301)
+shape = SubResource("BoxShape3D_rddtw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="HotelLobby/Front Desk" unique_id=599663352]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/Front Desk/StaticBody3D" unique_id=682027133]
@@ -3689,9 +3746,17 @@ mesh = ExtResource("30_qq2kr")
 transform = Transform3D(8.347416e-08, 0, -7, 0, 7, 0, 7, 0, 8.347416e-08, 171.39638, -0.15952969, 27.90279)
 mesh = ExtResource("30_qq2kr")
 
+[node name="LoungeSofa2" type="MeshInstance3D" parent="HotelLobby" unique_id=581045307]
+transform = Transform3D(0.0009905935, 0, 7, 0, 7, 0, -7, 0, 0.0009905935, 164.7147, -1.0690129, 0.46672344)
+mesh = ExtResource("31_m8duo")
+
 [node name="LoungeSofa" type="MeshInstance3D" parent="HotelLobby" unique_id=1503924103]
 transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, 160.10165, -0.15952969, 41.457466)
 mesh = ExtResource("31_m8duo")
+
+[node name="LoungeSofaCorner2" type="MeshInstance3D" parent="HotelLobby" unique_id=899897225]
+transform = Transform3D(-7, 0, -1.0569706e-06, 0, 7, 0, 1.0569706e-06, 0, -7, 161.1273, -1.2762451, 0.94872904)
+mesh = ExtResource("32_ktwfg")
 
 [node name="LoungeSofaCorner" type="MeshInstance3D" parent="HotelLobby" unique_id=826014017]
 transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, 156.26682, -0.15953064, 48.0402)
@@ -3699,18 +3764,6 @@ mesh = ExtResource("32_ktwfg")
 
 [node name="tableCoffeeGlass" parent="HotelLobby" unique_id=1042528456 instance=ExtResource("33_1lhit")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 154.91429, -0.1595316, 45.515465)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="HotelLobby" unique_id=562994427]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/StaticBody3D" unique_id=1747598067]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 144.76097, 8.345337, 10.776127)
-shape = SubResource("BoxShape3D_dim44")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="HotelLobby" unique_id=1334508587]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/StaticBody3D2" unique_id=282724750]
-transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 144.76097, 8.345337, 31.364212)
-shape = SubResource("BoxShape3D_vl740")
 
 [node name="Receptionist" type="StaticBody3D" parent="HotelLobby" unique_id=2098913943]
 script = ExtResource("41_1lhit")
