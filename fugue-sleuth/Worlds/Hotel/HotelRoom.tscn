@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://db6toqxc73eng" path="res://Blender/KenneyFurnitureKitAssets/Side/rugDoormat.png" id="10_yi8oc"]
 [ext_resource type="Texture2D" uid="uid://d2oamj8t16nlo" path="res://Blender/Textures/Bronze.jpg" id="11_1mpv4"]
 [ext_resource type="PackedScene" uid="uid://bgpul6wdpres0" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/bathtub.glb" id="11_ktwfg"]
+[ext_resource type="Script" uid="uid://bkcip1n1blfnj" path="res://Worlds/Hotel/detective.gd" id="11_xrail"]
 [ext_resource type="PackedScene" uid="uid://bolxniahkgqlq" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/bathroomMirror.glb" id="12_1lhit"]
 [ext_resource type="Script" uid="uid://d2quwpr1noaub" path="res://Worlds/Hotel/elevator_button.gd" id="13_1mpv4"]
 [ext_resource type="PackedScene" uid="uid://dk1ekicvs31y1" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/toilet.glb" id="13_dbhbu"]
@@ -42,6 +43,7 @@
 [ext_resource type="ArrayMesh" uid="uid://njdnptjit7oi" path="res://Blender/KenneyFurnitureKitAssets/Models/OBJ format/loungeSofaCorner.obj" id="32_ktwfg"]
 [ext_resource type="PackedScene" uid="uid://bp388gelbfb4e" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/tableCoffeeGlass.glb" id="33_1lhit"]
 [ext_resource type="Script" uid="uid://b3posm41kpku8" path="res://Worlds/Hotel/receptionist.gd" id="41_1lhit"]
+[ext_resource type="AudioStream" uid="uid://ccsi550gg5c5h" path="res://Audio/Dialogue.mp3" id="43_0lqf2"]
 [ext_resource type="AudioStream" uid="uid://chj7yg1h5upb" path="res://Audio/Music/DetectiveMusic.mp3" id="43_vl740"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mo6lj"]
@@ -1618,6 +1620,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.8
 
 [node name="Detective" type="StaticBody3D" parent="Room3/Bathroom" unique_id=1976795663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.71019, -4.084551, -9.293335)
+script = ExtResource("11_xrail")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room3/Bathroom/Detective" unique_id=960322298]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.30660295, -0.1392014, 0)
@@ -3716,6 +3719,9 @@ shape = SubResource("CapsuleShape3D_4ayxd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.005)
 mesh = SubResource("CapsuleMesh_4ayxd")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="HotelLobby/Receptionist" unique_id=1358391696]
+stream = ExtResource("43_0lqf2")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=436547774]
 stream = ExtResource("43_vl740")
 volume_db = -12.0
@@ -3723,6 +3729,7 @@ autoplay = true
 parameters/looping = true
 
 [connection signal="give_notes" from="John Detective" to="Control" method="_on_john_detective_give_notes"]
+[connection signal="interacted" from="Room3/Bathroom/Detective/InteractableObject" to="Room3/Bathroom/Detective" method="last_cutscene"]
 [connection signal="timeout" from="HotelHallway/Rooms/RoomPlaceHolder2/Door/Timer" to="HotelHallway/Rooms/RoomPlaceHolder2/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="HotelHallway/Rooms/RoomPlaceHolder/Door/Timer" to="HotelHallway/Rooms/RoomPlaceHolder/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="HotelHallway/Rooms/RoomPlaceHolder3/Door/Timer" to="HotelHallway/Rooms/RoomPlaceHolder3/Door/hinge/StaticBody3D" method="_on_timer_timeout"]

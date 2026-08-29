@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://d1fid1ysunjiw"]
+
+[ext_resource type="Script" uid="uid://b1j0fn7j6thkf" path="res://Cutscenes/choose.gd" id="1_go5hm"]
+
+[node name="Choose" type="Control" unique_id=1798583832]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_go5hm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=121971910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Run" type="Button" parent="." unique_id=134268696]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -146.0
+offset_right = 73.5
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Run"
+
+[node name="Become" type="Button" parent="." unique_id=724732418]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = 54.0
+offset_right = 73.5
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Become the
+Detective"
+
+[node name="TurnIn" type="Button" parent="." unique_id=1654101987]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 126.5
+offset_top = -46.0
+offset_right = 273.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Turn 
+Yourself In"
+
+[node name="GiveUp" type="Button" parent="." unique_id=895761915]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.5
+offset_top = -46.0
+offset_right = -126.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Give Up
+"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1295240274]
+position = Vector2(576, 324)
+
+[connection signal="pressed" from="Run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="Become" to="." method="_on_become_pressed"]
+[connection signal="pressed" from="TurnIn" to="." method="_on_turn_in_pressed"]
+[connection signal="pressed" from="GiveUp" to="." method="_on_give_up_pressed"]
