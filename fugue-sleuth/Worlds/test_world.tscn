@@ -158,6 +158,7 @@ material = SubResource("StandardMaterial3D_tbl1j")
 
 [node name="John Detective" parent="." unique_id=934400168 instance=ExtResource("1_3xrbq")]
 transform = Transform3D(-0.8917308, 0, 0.4525663, 0, 1, 0, -0.4525663, 0, -0.8917308, 14.884904, 0.9016597, -3.5083103)
+visible = true
 
 [node name="Control" parent="." unique_id=101648911 instance=ExtResource("2_0n0fo")]
 

@@ -49,3 +49,7 @@ func _on_menu_pressed() -> void:
 	$Control.visible = true
 	$Notes.visible = false
 	$EvidencePage.visible = false
+
+
+func _on_john_detective_give_notes() -> void:
+	$PanelContainer/VBoxContainer/Notes.visible = true

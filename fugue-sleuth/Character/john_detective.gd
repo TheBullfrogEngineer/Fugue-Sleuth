@@ -77,9 +77,9 @@ func _process(delta):
 			$Label.visible = true
 			if Input.is_action_just_pressed("interact"):
 				hitObj.notepad()
+				give_notes.emit()
 				$Control/RightHand.frame = 1
 				$Timer.start()
-				give_notes.emit()
 		elif hitObj.has_method("elevator"):
 			$Label2.visible = false
 			$Label.visible = true
@@ -87,6 +87,13 @@ func _process(delta):
 				hitObj.elevator()
 				$Control/RightHand.frame = 1
 				$Timer.start()
+		elif hitObj.has_method("elevator_two"):
+			$Label2.visible = false
+			$Label.visible = true
+			if Input.is_action_just_pressed("interact"):
+				hitObj.elevator_two()
+				$Control/RightHand.frame = 1
+				$Timer.start()		
 		else:	
 			if get_interactable_object_at_shapecast():
 				$Label2.visible = false
@@ -215,3 +222,11 @@ func change_collision_shape(shape):
 
 func _on_timer_timeout() -> void:
 	$Control/RightHand.frame = 0
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	global_position += Vector3(50, 0, -10)
+
+
+func _on_area_3d_2_body_entered(body: Node3D) -> void:
+	global_position += Vector3(105, 0, 80)
