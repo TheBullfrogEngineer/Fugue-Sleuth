@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3lf8hl52kxfm"
+path="res://.godot/imported/pillowBlue.obj-f302257ee4e02e10778cdf31dfa2e53b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pillowBlue.obj-f302257ee4e02e10778cdf31dfa2e53b.mesh"]
+
+source_file="res://Blender/KenneyFurnitureKitAssets/Models/OBJ format/pillowBlue.obj"
+dest_files=["res://.godot/imported/pillowBlue.obj-f302257ee4e02e10778cdf31dfa2e53b.mesh", "res://.godot/imported/pillowBlue.obj-f302257ee4e02e10778cdf31dfa2e53b.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

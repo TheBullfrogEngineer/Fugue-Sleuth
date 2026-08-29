@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b1nb1cyf14jtw"
+path="res://.godot/imported/coatRackStanding.obj-916ffa3b14b0133524e754419c04409c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/coatRackStanding.obj-916ffa3b14b0133524e754419c04409c.mesh"]
+
+source_file="res://Blender/KenneyFurnitureKitAssets/Models/OBJ format/coatRackStanding.obj"
+dest_files=["res://.godot/imported/coatRackStanding.obj-916ffa3b14b0133524e754419c04409c.mesh", "res://.godot/imported/coatRackStanding.obj-916ffa3b14b0133524e754419c04409c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

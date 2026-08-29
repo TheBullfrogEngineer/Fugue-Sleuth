@@ -80,9 +80,20 @@ func _process(delta):
 				$Control/RightHand.frame = 1
 				$Timer.start()
 				give_notes.emit()
+		elif hitObj.has_method("elevator"):
+			$Label2.visible = false
+			$Label.visible = true
+			if Input.is_action_just_pressed("interact"):
+				hitObj.elevator()
+				$Control/RightHand.frame = 1
+				$Timer.start()
 		else:	
-			$Label2.visible = true
-			$Label.visible = false
+			if get_interactable_object_at_shapecast():
+				$Label2.visible = false
+				$Label.visible = true
+			else:
+				$Label2.visible = true
+				$Label.visible = false
 	if velocity.x != 0 or velocity.z != 0 or velocity.y != 0:
 		$Control/LeftRun.visible = true
 		$"Control/LeftHand".visible = false

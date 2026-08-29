@@ -1,12 +1,23 @@
 [gd_scene format=3 uid="uid://c85frmreni5v1"]
 
 [ext_resource type="Script" uid="uid://cqf3n4h3xqmdv" path="res://Interactable System/door.gd" id="1_um285"]
+[ext_resource type="Texture2D" uid="uid://yupy71tq6tqt" path="res://Blender/Textures/Wood_Ink.jpg" id="2_cry1u"]
+[ext_resource type="Texture2D" uid="uid://db6toqxc73eng" path="res://Blender/KenneyFurnitureKitAssets/Side/rugDoormat.png" id="3_k22qh"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7lqb0"]
 points = PackedVector3Array(1.5555556, 2.5386884, 0.17777777, -1.5396826, -2.5386884, -0.13968253, -1.5396826, -2.5386884, 0.17777777, -1.5396826, 2.5386884, -0.13968253, 1.5555556, -2.5386884, -0.13968253, 1.5555556, -2.5386884, 0.17777777, -1.5396826, 2.5386884, 0.17777777, 1.5555556, 2.5386884, -0.13968253)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k22qh"]
+albedo_texture = ExtResource("2_cry1u")
+
 [sub_resource type="BoxMesh" id="BoxMesh_4ayxd"]
 size = Vector3(3, 5, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obn2l"]
+albedo_texture = ExtResource("3_k22qh")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ggs6p"]
+size = Vector3(0.6619873, 0.09094238, 0.23132324)
 
 [sub_resource type="Animation" id="Animation_k22qh"]
 resource_name = "Close"
@@ -139,7 +150,18 @@ shape = SubResource("ConvexPolygonShape3D_7lqb0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="hinge" unique_id=1117994901]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
+material_override = SubResource("StandardMaterial3D_k22qh")
 mesh = SubResource("BoxMesh_4ayxd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="hinge" unique_id=543336405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4903808, 2.3423688, -0.07920349)
+material_override = SubResource("StandardMaterial3D_obn2l")
+mesh = SubResource("BoxMesh_ggs6p")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="hinge" unique_id=527340054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43142843, 2.3423688, 0.12934697)
+material_override = SubResource("StandardMaterial3D_obn2l")
+mesh = SubResource("BoxMesh_ggs6p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=71795368]
 libraries/ = SubResource("AnimationLibrary_k22qh")

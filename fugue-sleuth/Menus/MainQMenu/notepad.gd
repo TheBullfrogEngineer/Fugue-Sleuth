@@ -32,10 +32,12 @@ func notes_visible():
 	$PanelContainer/VBoxContainer/Notes.visible = true
 	
 func _on_notes_pressed() -> void:
+	if $Notes.visible == false:
+		$Open.play()
 	$Control.visible = false
 	$Notes.visible = true
 	$EvidencePage.visible = false
-
+	
 
 func _on_evidence_pressed() -> void:
 	$Control.visible = false

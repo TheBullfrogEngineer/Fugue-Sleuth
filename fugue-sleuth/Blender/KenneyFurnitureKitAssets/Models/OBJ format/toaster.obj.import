@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://snpn4844t72a"
+path="res://.godot/imported/toaster.obj-0f06fc4556a76fdf3c0fc2ca273ba41a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/toaster.obj-0f06fc4556a76fdf3c0fc2ca273ba41a.mesh"]
+
+source_file="res://Blender/KenneyFurnitureKitAssets/Models/OBJ format/toaster.obj"
+dest_files=["res://.godot/imported/toaster.obj-0f06fc4556a76fdf3c0fc2ca273ba41a.mesh", "res://.godot/imported/toaster.obj-0f06fc4556a76fdf3c0fc2ca273ba41a.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

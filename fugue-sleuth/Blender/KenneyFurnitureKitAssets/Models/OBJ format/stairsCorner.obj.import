@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dml5cem1g4btn"
+path="res://.godot/imported/stairsCorner.obj-b59cace02db9987822570de9566a458c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairsCorner.obj-b59cace02db9987822570de9566a458c.mesh"]
+
+source_file="res://Blender/KenneyFurnitureKitAssets/Models/OBJ format/stairsCorner.obj"
+dest_files=["res://.godot/imported/stairsCorner.obj-b59cace02db9987822570de9566a458c.mesh", "res://.godot/imported/stairsCorner.obj-b59cace02db9987822570de9566a458c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
