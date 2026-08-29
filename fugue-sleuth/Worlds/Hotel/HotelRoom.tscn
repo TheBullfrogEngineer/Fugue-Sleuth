@@ -45,6 +45,10 @@
 [ext_resource type="Script" uid="uid://b3posm41kpku8" path="res://Worlds/Hotel/receptionist.gd" id="41_1lhit"]
 [ext_resource type="AudioStream" uid="uid://ccsi550gg5c5h" path="res://Audio/Dialogue.mp3" id="43_0lqf2"]
 [ext_resource type="AudioStream" uid="uid://chj7yg1h5upb" path="res://Audio/Music/DetectiveMusic.mp3" id="43_vl740"]
+[ext_resource type="PackedScene" uid="uid://fkehnwko4axy" path="res://Blender/Rooms/ER Room-col.glb" id="46_ssjjd"]
+[ext_resource type="PackedScene" uid="uid://7tmkbif24chv" path="res://Blender/Rooms/Library-col.glb" id="47_kom0q"]
+[ext_resource type="PackedScene" uid="uid://b6xb3rtxaeeoi" path="res://Blender/Rooms/Auditorium-col.glb" id="48_c54il"]
+[ext_resource type="PackedScene" uid="uid://c033ut0lyc8rg" path="res://Blender/Rooms/RoomA-col.glb" id="49_edb3s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mo6lj"]
 resource_name = "metalDark"
@@ -3727,6 +3731,18 @@ stream = ExtResource("43_vl740")
 volume_db = -12.0
 autoplay = true
 parameters/looping = true
+
+[node name="ER Room-col" parent="." unique_id=1400466565 instance=ExtResource("46_ssjjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.148632, 4.987671, 72.12118)
+
+[node name="Library-col" parent="." unique_id=1553006687 instance=ExtResource("47_kom0q")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 55.429413, -10.66814, -65.52672)
+
+[node name="Auditorium-col" parent="." unique_id=1337999924 instance=ExtResource("48_c54il")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.746735, -18.49767, 42.10125)
+
+[node name="RoomA-col" parent="." unique_id=990761191 instance=ExtResource("49_edb3s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.63939, -1.8234596, -34.965065)
 
 [connection signal="give_notes" from="John Detective" to="Control" method="_on_john_detective_give_notes"]
 [connection signal="interacted" from="Room3/Bathroom/Detective/InteractableObject" to="Room3/Bathroom/Detective" method="last_cutscene"]

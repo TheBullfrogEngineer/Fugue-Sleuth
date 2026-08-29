@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b54ndupwxtnyl"]
+
+[ext_resource type="PackedScene" uid="uid://7tmkbif24chv" path="res://Blender/Rooms/Library-col.glb" id="1_5ubux"]
+
+[node name="Library-col" unique_id=1553006687 instance=ExtResource("1_5ubux")]
