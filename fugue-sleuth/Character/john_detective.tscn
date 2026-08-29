@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dfx06aq5wpwxx" path="res://Character/right2.png" id="6_kgbqg"]
 [ext_resource type="Texture2D" uid="uid://dajhkatfmq74m" path="res://Character/Interact3(different Angle).png" id="6_nnnsa"]
 [ext_resource type="Texture2D" uid="uid://dg6rxflkuk0oi" path="res://Character/right3.png" id="7_3xlxg"]
+[ext_resource type="AudioStream" uid="uid://covcphh63lvg1" path="res://Audio/SFX/walk/Newer Walk.mp3" id="12_85ia0"]
+[ext_resource type="AudioStream" uid="uid://lb067hf6x1hh" path="res://Audio/SFX/keyboard/type_b.wav" id="13_btrdu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ayxd"]
 radius = 0.15
@@ -207,6 +209,24 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 25
 text = "\"E\" to Interact"
 
+[node name="Label4" type="Label" parent="." unique_id=1824958248]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -11.5
+offset_right = 54.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 25
+text = "\"E\" to Talk"
+
 [node name="Control" type="Control" parent="." unique_id=147155084]
 layout_mode = 3
 anchors_preset = 0
@@ -269,5 +289,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Press 'Q' to Open Notepad"
+
+[node name="WalkingSFX" type="AudioStreamPlayer3D" parent="." unique_id=2042985752]
+stream = ExtResource("12_85ia0")
+volume_db = -23.811
+parameters/looping = true
+
+[node name="Interact" type="AudioStreamPlayer2D" parent="." unique_id=1066731267]
+stream = ExtResource("13_btrdu")
+volume_db = 10.494
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

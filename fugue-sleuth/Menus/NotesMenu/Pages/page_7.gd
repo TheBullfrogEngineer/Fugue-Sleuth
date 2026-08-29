@@ -8,6 +8,8 @@ func _input(event : InputEvent):
 var notes : String = " "
 
 func _on_text_changed() -> void:
+	if $"../../AudioStreamPlayer2D".playing == false:
+		$"../../AudioStreamPlayer2D".play()
 	if get_total_visible_line_count() > 15:
 		text = notes
 		$".".visible = false

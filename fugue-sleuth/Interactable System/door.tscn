@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cqf3n4h3xqmdv" path="res://Interactable System/door.gd" id="1_um285"]
 [ext_resource type="Texture2D" uid="uid://yupy71tq6tqt" path="res://Blender/Textures/Wood_Ink.jpg" id="2_cry1u"]
 [ext_resource type="Texture2D" uid="uid://db6toqxc73eng" path="res://Blender/KenneyFurnitureKitAssets/Side/rugDoormat.png" id="3_k22qh"]
+[ext_resource type="AudioStream" uid="uid://bomq4snif5txl" path="res://Audio/SFX/closeDoor.mp3" id="4_hx500"]
+[ext_resource type="AudioStream" uid="uid://3ngeuuabm7rn" path="res://Audio/SFX/slam-door-page-15.mp3" id="5_cijvx"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7lqb0"]
 points = PackedVector3Array(1.5555556, 2.5386884, 0.17777777, -1.5396826, -2.5386884, -0.13968253, -1.5396826, -2.5386884, 0.17777777, -1.5396826, 2.5386884, -0.13968253, 1.5555556, -2.5386884, -0.13968253, 1.5555556, -2.5386884, 0.17777777, -1.5396826, 2.5386884, 0.17777777, 1.5555556, 2.5386884, -0.13968253)
@@ -21,7 +23,7 @@ size = Vector3(0.6619873, 0.09094238, 0.23132324)
 
 [sub_resource type="Animation" id="Animation_k22qh"]
 resource_name = "Close"
-length = 0.3
+length = 0.8
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,10 +57,25 @@ tracks/2/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.050000004, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.3)
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 1.17,
+"start_offset": 0.10000005,
+"stream": ExtResource("4_hx500")
+}],
+"times": PackedFloat32Array(0.19999999)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_um285"]
 resource_name = "Open"
-length = 1.0333333
+length = 1.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -92,6 +109,21 @@ tracks/2/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.083333336, 0, 0, 0, 0, -0.041666668, 0, 0, 0, 0, -0.03333333, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.5, 0.75, 0.95)
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 1.28,
+"start_offset": 0.0,
+"stream": ExtResource("5_cijvx")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_cry1u"]
 length = 0.001
@@ -168,5 +200,8 @@ libraries/ = SubResource("AnimationLibrary_k22qh")
 
 [node name="Timer" type="Timer" parent="." unique_id=1432052764]
 wait_time = 0.5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=477089390]
+volume_db = 15.532
 
 [connection signal="timeout" from="Timer" to="hinge/StaticBody3D" method="_on_timer_timeout"]

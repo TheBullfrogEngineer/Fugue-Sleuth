@@ -44,9 +44,10 @@ func _paint_tex(pos) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if event.button_mask == MOUSE_BUTTON_LEFT:
+			if $"../AudioStreamPlayer2D".playing == false:
+				$"../AudioStreamPlayer2D".play()
 			var lpos = to_local(event.position)
 			var impos = lpos-offset+get_rect().size/2.0
-
 			if event.relative.length_squared() > 0:
 				var num := ceili(event.relative.length())
 				var target_pos = impos - (event.relative)
@@ -54,3 +55,5 @@ func _input(event: InputEvent) -> void:
 					impos = impos.move_toward(target_pos, 1.0)
 					_paint_tex(impos)
 			texture.update(imgs[page])
+		else:
+			$"../AudioStreamPlayer2D".stop()

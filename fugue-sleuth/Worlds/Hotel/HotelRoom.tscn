@@ -34,12 +34,15 @@
 [ext_resource type="PackedScene" uid="uid://cm5cre0w485x6" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/kitchenBarEnd.glb" id="20_scqfm"]
 [ext_resource type="PackedScene" uid="uid://cv46yk6w28u8c" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/kitchenBar.glb" id="21_pjn6c"]
 [ext_resource type="PackedScene" uid="uid://car8m1wqjqvvq" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/computerKeyboard.glb" id="22_6t7vt"]
+[ext_resource type="Script" uid="uid://co66l6ptpjbnc" path="res://Interactable.gd" id="22_dbhbu"]
 [ext_resource type="PackedScene" uid="uid://d3037apr4acyu" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/computerMouse.glb" id="23_vggpj"]
 [ext_resource type="PackedScene" uid="uid://dqwrsjwl760qi" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/computerScreen.glb" id="24_rtnoh"]
 [ext_resource type="ArrayMesh" uid="uid://dsmycttw6yh1t" path="res://Blender/KenneyFurnitureKitAssets/Models/OBJ format/wallDoorwayWide.obj" id="30_qq2kr"]
 [ext_resource type="ArrayMesh" uid="uid://irgmb1j0ubjp" path="res://Blender/KenneyFurnitureKitAssets/Models/OBJ format/loungeSofa.obj" id="31_m8duo"]
 [ext_resource type="ArrayMesh" uid="uid://njdnptjit7oi" path="res://Blender/KenneyFurnitureKitAssets/Models/OBJ format/loungeSofaCorner.obj" id="32_ktwfg"]
 [ext_resource type="PackedScene" uid="uid://bp388gelbfb4e" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/tableCoffeeGlass.glb" id="33_1lhit"]
+[ext_resource type="Script" uid="uid://b3posm41kpku8" path="res://Worlds/Hotel/receptionist.gd" id="41_1lhit"]
+[ext_resource type="AudioStream" uid="uid://chj7yg1h5upb" path="res://Audio/Music/DetectiveMusic.mp3" id="43_vl740"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mo6lj"]
 resource_name = "metalDark"
@@ -613,6 +616,12 @@ albedo_texture = ExtResource("9_1op6p")
 albedo_color = Color(0, 0, 0, 1)
 albedo_texture = ExtResource("1_ax5md")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ggs6p"]
+height = 4.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rddtw"]
+height = 4.0
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_w5wj6"]
 size = Vector3(0.41259766, 1, 0.36791992)
 
@@ -1124,6 +1133,12 @@ size = Vector3(6.061157, 2.6690674, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vl740"]
 size = Vector3(6.061157, 2.6690674, 1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ayxd"]
+height = 5.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4ayxd"]
+height = 5.0
+
 [node name="Node3D" type="Node3D" unique_id=915229441]
 script = ExtResource("1_ktwfg")
 
@@ -1601,6 +1616,20 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.8
 
 [node name="Bathroom" type="Node3D" parent="Room3" unique_id=1097416018]
 
+[node name="Detective" type="StaticBody3D" parent="Room3/Bathroom" unique_id=1976795663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.71019, -4.084551, -9.293335)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room3/Bathroom/Detective" unique_id=960322298]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.30660295, -0.1392014, 0)
+shape = SubResource("CapsuleShape3D_ggs6p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room3/Bathroom/Detective/CollisionShape3D" unique_id=267593841]
+mesh = SubResource("CapsuleMesh_rddtw")
+
+[node name="InteractableObject" type="Node" parent="Room3/Bathroom/Detective" unique_id=1804181249]
+script = ExtResource("22_dbhbu")
+metadata/_custom_type_script = "uid://co66l6ptpjbnc"
+
 [node name="Wall8" type="CSGBox3D" parent="Room3/Bathroom" unique_id=2073200707]
 transform = Transform3D(-4.3711385e-08, 0, 1, 0, 1, 0, -0.99999994, 0, -4.371139e-08, 6.663391, 0, -8.111595)
 material_override = SubResource("StandardMaterial3D_1mpv4")
@@ -1654,6 +1683,20 @@ transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 10.794495, -4.3036256, -0.434
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room3/shower/StaticBody3D" unique_id=1094284178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24554443, 0.2824707, -0.54296875)
 shape = SubResource("BoxShape3D_lqlvn")
+
+[node name="Detective\'s Wife" type="StaticBody3D" parent="Room3" unique_id=925024210]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.450699, -4.084551, 16.106167)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room3/Detective\'s Wife" unique_id=392055209]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.30660295, -0.1392014, 0)
+shape = SubResource("CapsuleShape3D_ggs6p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room3/Detective\'s Wife/CollisionShape3D" unique_id=1510586190]
+mesh = SubResource("CapsuleMesh_rddtw")
+
+[node name="InteractableObject" type="Node" parent="Room3/Detective\'s Wife" unique_id=2072576037]
+script = ExtResource("22_dbhbu")
+metadata/_custom_type_script = "uid://co66l6ptpjbnc"
 
 [node name="Notepad" type="Node3D" parent="." unique_id=946014723]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6701493, 2.4296248, -16.295101)
@@ -2539,6 +2582,19 @@ use_collision = true
 size = Vector3(4.1151886, 16.146172, 1)
 material = SubResource("StandardMaterial3D_4snfl")
 
+[node name="Corpse1" type="StaticBody3D" parent="HotelHallway" unique_id=1049476229]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelHallway/Corpse1" unique_id=698135901]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.30660295, -0.1392014, 0)
+shape = SubResource("CapsuleShape3D_ggs6p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HotelHallway/Corpse1/CollisionShape3D" unique_id=1151136451]
+mesh = SubResource("CapsuleMesh_rddtw")
+
+[node name="InteractableObject" type="Node" parent="HotelHallway/Corpse1" unique_id=1377024692]
+script = ExtResource("22_dbhbu")
+metadata/_custom_type_script = "uid://co66l6ptpjbnc"
+
 [node name="HotelHallway2" type="Node3D" parent="." unique_id=998990132]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 178.66371, 0, 72.710724)
 
@@ -3410,6 +3466,19 @@ use_collision = true
 size = Vector3(4.1151886, 16.146172, 1)
 material = SubResource("StandardMaterial3D_4snfl")
 
+[node name="Corpse1" type="StaticBody3D" parent="HotelHallway2" unique_id=1757394338]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelHallway2/Corpse1" unique_id=1509112921]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.30660295, -0.1392014, 0)
+shape = SubResource("CapsuleShape3D_ggs6p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HotelHallway2/Corpse1/CollisionShape3D" unique_id=314471398]
+mesh = SubResource("CapsuleMesh_rddtw")
+
+[node name="InteractableObject" type="Node" parent="HotelHallway2/Corpse1" unique_id=1240914003]
+script = ExtResource("22_dbhbu")
+metadata/_custom_type_script = "uid://co66l6ptpjbnc"
+
 [node name="HotelLobby" type="Node3D" parent="." unique_id=565608685]
 
 [node name="LoungeSofaOttoman" type="MeshInstance3D" parent="HotelLobby" unique_id=713536241]
@@ -3635,6 +3704,23 @@ shape = SubResource("BoxShape3D_dim44")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/StaticBody3D2" unique_id=282724750]
 transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 144.76097, 8.345337, 31.364212)
 shape = SubResource("BoxShape3D_vl740")
+
+[node name="Receptionist" type="StaticBody3D" parent="HotelLobby" unique_id=2098913943]
+script = ExtResource("41_1lhit")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelLobby/Receptionist" unique_id=1229288462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 2.2511766, 47)
+shape = SubResource("CapsuleShape3D_4ayxd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HotelLobby/Receptionist/CollisionShape3D" unique_id=739789234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.005)
+mesh = SubResource("CapsuleMesh_4ayxd")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=436547774]
+stream = ExtResource("43_vl740")
+volume_db = -12.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="give_notes" from="John Detective" to="Control" method="_on_john_detective_give_notes"]
 [connection signal="timeout" from="HotelHallway/Rooms/RoomPlaceHolder2/Door/Timer" to="HotelHallway/Rooms/RoomPlaceHolder2/Door/hinge/StaticBody3D" method="_on_timer_timeout"]

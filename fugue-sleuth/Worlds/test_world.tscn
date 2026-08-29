@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b5ikrlsu5c4he" path="res://Blender/Textures/Wall.jpg" id="2_ypwe8"]
 [ext_resource type="Script" uid="uid://d28dbn42wehct" path="res://Interactable System/InteractableObject.gd" id="3_jbqd0"]
 [ext_resource type="Resource" uid="uid://bu3yf0timgaqm" path="res://Interactable System/evidence_1.tres" id="6_u04th"]
-[ext_resource type="AudioStream" uid="uid://chj7yg1h5upb" path="res://Audio/Music/DetectiveMusic.mp3" id="6_ypwe8"]
 [ext_resource type="PackedScene" uid="uid://c85frmreni5v1" path="res://Interactable System/door.tscn" id="8_tbl1j"]
 [ext_resource type="PackedScene" uid="uid://vpfkpnwlmsgy" path="res://Interactable System/notepad.tscn" id="9_21ahh"]
 
@@ -200,10 +199,8 @@ evidence_card = ExtResource("6_u04th")
 metadata/_custom_type_script = "uid://d28dbn42wehct"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1192719182]
-stream = ExtResource("6_ypwe8")
-volume_db = -18.128
+volume_db = -80.0
 autoplay = true
-parameters/looping = true
 
 [node name="Door" parent="." unique_id=389276268 instance=ExtResource("8_tbl1j")]
 

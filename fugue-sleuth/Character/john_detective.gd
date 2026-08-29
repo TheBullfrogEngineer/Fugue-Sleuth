@@ -58,6 +58,7 @@ func _process(delta):
 		$Label2.visible = false
 		$Label.visible = true
 		if Input.is_action_just_pressed("interact"):
+			$Interact.play()
 			$Control/RightHand.frame = 1
 			$Timer.start()
 			get_interactable_object_at_shapecast().interact_with()
@@ -79,6 +80,7 @@ func _process(delta):
 			$Label.visible = true
 			if Input.is_action_just_pressed("interact"):
 				hitObj.notepad()
+				$Interact.play()
 				give_notes.emit()
 				$Label3.visible = true
 				$Control/RightHand.frame = 1
@@ -88,6 +90,7 @@ func _process(delta):
 			$Label.visible = true
 			if Input.is_action_just_pressed("interact"):
 				hitObj.elevator()
+				$Interact.play()
 				$Control/RightHand.frame = 1
 				$Timer.start()
 		elif hitObj.has_method("elevator_two"):
@@ -95,21 +98,44 @@ func _process(delta):
 			$Label.visible = true
 			if Input.is_action_just_pressed("interact"):
 				hitObj.elevator_two()
+				$Interact.play()
 				$Control/RightHand.frame = 1
-				$Timer.start()		
+				$Timer.start()	
+		elif hitObj.has_method("talk"):
+			$Label2.visible = false
+			$Label4.visible = true
+			if Input.is_action_just_pressed("interact"):
+				hitObj.talk()
+				$Interact.play()
+				give_notes.emit()
+				$Control/RightHand.frame = 1
+				$Timer.start()			
 		else:	
 			if get_interactable_object_at_shapecast():
 				$Label2.visible = false
+				$Label4.visible = false
 				$Label.visible = true
 			else:
 				$Label2.visible = true
 				$Label.visible = false
-	if velocity.x != 0 or velocity.z != 0 or velocity.y != 0:
+				$Label4.visible = false
+	if velocity.x != 0 or velocity.z != 0:
 		$Control/LeftRun.visible = true
 		$"Control/LeftHand".visible = false
 		$"Control/RightRun".visible = true
 		$Control/RightHand.visible = false
+		if $WalkingSFX.playing == false:
+			$WalkingSFX.play()
+		if velocity.y != 0:
+			if $WalkingSFX.playing:
+				$WalkingSFX.stop()
+			$Control/LeftRun.visible = true
+			$"Control/LeftHand".visible = false
+			$"Control/RightRun".visible = true
+			$Control/RightHand.visible = false
 	else:
+		if $WalkingSFX.playing:
+			$WalkingSFX.stop()
 		$Control/LeftRun.visible = false
 		$"Control/LeftHand".visible = true
 		$"Control/RightRun".visible = false
