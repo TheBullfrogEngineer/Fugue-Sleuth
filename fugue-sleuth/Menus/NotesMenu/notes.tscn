@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://c3awe645ognhe" path="res://Menus/NotesMenu/Pages/page_9.gd" id="11_v2bhy"]
 [ext_resource type="Script" uid="uid://gtlir8d56b2h" path="res://Menus/NotesMenu/Pages/page_10.gd" id="12_rpyfp"]
 [ext_resource type="AudioStream" uid="uid://xf4ixnsk2feg" path="res://Audio/SFX/book/book_flipping_a.wav" id="13_0421b"]
+[ext_resource type="Theme" uid="uid://r3ujndhclyq1" path="res://Menus/default.tres" id="14_5lg3k"]
 [ext_resource type="AudioStream" uid="uid://cgokq401pnv8m" path="res://Audio/SFX/book/writing.mp3" id="14_hxg8q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8as4"]
@@ -331,6 +332,7 @@ offset_left = 172.0
 offset_top = 3.0
 offset_right = 259.0
 offset_bottom = 34.0
+theme = ExtResource("14_5lg3k")
 text = "Next Page
 "
 
@@ -340,6 +342,7 @@ offset_left = 47.0
 offset_top = 3.0
 offset_right = 164.0
 offset_bottom = 34.0
+theme = ExtResource("14_5lg3k")
 text = "Previous Page
 "
 

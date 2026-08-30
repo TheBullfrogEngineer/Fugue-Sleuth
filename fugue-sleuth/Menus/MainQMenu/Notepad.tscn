@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://j0ixb01qc4rs"]
 
+[ext_resource type="Theme" uid="uid://r3ujndhclyq1" path="res://Menus/default.tres" id="1_45ep4"]
 [ext_resource type="PackedScene" uid="uid://4pfvp0hcsow" path="res://Character/Menu.tscn" id="1_82ir8"]
 [ext_resource type="Script" uid="uid://bf6sfucpr7wg0" path="res://Menus/MainQMenu/notepad.gd" id="1_amhaa"]
 [ext_resource type="PackedScene" uid="uid://by7fdj8xfet27" path="res://Menus/NotesMenu/notes.tscn" id="3_pe64q"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_45ep4")
 script = ExtResource("1_amhaa")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1064020834]
@@ -31,9 +33,11 @@ offset_right = 100.0
 offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_45ep4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1258484855]
 layout_mode = 2
+theme = ExtResource("1_45ep4")
 
 [node name="Notes" type="Button" parent="PanelContainer/VBoxContainer" unique_id=344575165]
 visible = false

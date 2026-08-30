@@ -7,12 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://bwc6y62vj4sas" path="res://Blender/Textures/Wall_Ink.jpg" id="3_0ov87"]
 [ext_resource type="PackedScene" uid="uid://ccur52qjwyt7v" path="res://Character/john_detective.tscn" id="3_8y5sn"]
 [ext_resource type="PackedScene" uid="uid://j0ixb01qc4rs" path="res://Menus/MainQMenu/Notepad.tscn" id="4_d65ua"]
+[ext_resource type="Theme" uid="uid://r3ujndhclyq1" path="res://Menus/default.tres" id="4_lwkga"]
 [ext_resource type="PackedScene" uid="uid://c85frmreni5v1" path="res://Interactable System/door.tscn" id="5_2fuiq"]
 [ext_resource type="Texture2D" uid="uid://ch583hqxixwoi" path="res://Blender/HouseUnfin_Wood.jpg" id="6_yi8oc"]
 [ext_resource type="Texture2D" uid="uid://ch656mola1wma" path="res://Blender/Textures/Bronze_Ink.jpg" id="9_1op6p"]
 [ext_resource type="Texture2D" uid="uid://yupy71tq6tqt" path="res://Blender/Textures/Wood_Ink.jpg" id="9_04l5h"]
 [ext_resource type="Script" uid="uid://bo65a1gpydixs" path="res://Interactable System/physicalnotepad.gd" id="9_o7cum"]
-[ext_resource type="Texture2D" uid="uid://7e3uw13qi0ba" path="res://Blender/Textures/Book.png" id="10_cyp34"]
+[ext_resource type="Texture2D" uid="uid://7e3uw13qi0ba" path="res://Blender/textures/Book.png" id="10_cyp34"]
 [ext_resource type="PackedScene" uid="uid://nh6ly7k4xgk3" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/bathroomCabinetDrawer.glb" id="10_m8duo"]
 [ext_resource type="Texture2D" uid="uid://db6toqxc73eng" path="res://Blender/KenneyFurnitureKitAssets/Side/rugDoormat.png" id="10_yi8oc"]
 [ext_resource type="Texture2D" uid="uid://d2oamj8t16nlo" path="res://Blender/Textures/Bronze.jpg" id="11_1mpv4"]
@@ -1721,6 +1722,7 @@ transform = Transform3D(-0.7265747, 0, -0.6870875, 0, 1, 0, 0.6870875, 0, -0.726
 visible = true
 
 [node name="Control" parent="." unique_id=101648911 instance=ExtResource("4_d65ua")]
+theme = ExtResource("4_lwkga")
 
 [node name="Room" type="Node3D" parent="." unique_id=1174678315]
 transform = Transform3D(-3.6237576e-08, 0, 1.0012498, 0, 1.0012498, 0, -0.8290191, 0, -4.376602e-08, 0.85503864, 4.8282843, 1.9303846)
