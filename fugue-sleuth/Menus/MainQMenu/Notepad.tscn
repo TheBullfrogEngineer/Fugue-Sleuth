@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://j0ixb01qc4rs"]
 
-[ext_resource type="PackedScene" uid="uid://4pfvp0hcsow" path="res://Menus/SettingsMenu/Menu.tscn" id="1_82ir8"]
+[ext_resource type="PackedScene" uid="uid://4pfvp0hcsow" path="res://Character/Menu.tscn" id="1_82ir8"]
 [ext_resource type="Script" uid="uid://bf6sfucpr7wg0" path="res://Menus/MainQMenu/notepad.gd" id="1_amhaa"]
 [ext_resource type="PackedScene" uid="uid://by7fdj8xfet27" path="res://Menus/NotesMenu/notes.tscn" id="3_pe64q"]
 [ext_resource type="PackedScene" uid="uid://uj4atbekabdo" path="res://Menus/EvidenceMenu/evidence_page.tscn" id="4_2836c"]

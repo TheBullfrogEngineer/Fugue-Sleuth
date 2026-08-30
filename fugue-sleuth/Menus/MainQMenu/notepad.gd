@@ -12,6 +12,7 @@ func pause_toggle():
 	if is_paused:
 		$Close.play()
 		resume()
+		$Notes.visible = false
 	else:
 		$Open.play()
 		pause()

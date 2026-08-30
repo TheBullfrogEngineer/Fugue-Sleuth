@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EvidenceCard" format=3 uid="uid://yojuji10o0p"]
+
+[ext_resource type="Script" uid="uid://ckcs5xylm1la1" path="res://evidence_card.gd" id="1_1grop"]
+[ext_resource type="Texture2D" uid="uid://c0xwuo3yllevr" path="res://Blender/ER Room_Cloth.jpg" id="2_mjakw"]
+
+[resource]
+script = ExtResource("1_1grop")
+id = "1"
+display_name = "Journal"
+visual = ExtResource("2_mjakw")
+metadata/_custom_type_script = "uid://ckcs5xylm1la1"

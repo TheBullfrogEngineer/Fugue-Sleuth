@@ -44,7 +44,7 @@ func _paint_tex(pos) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if event.button_mask == MOUSE_BUTTON_LEFT:
-			if $"../AudioStreamPlayer2D".playing == false:
+			if $"../AudioStreamPlayer2D".playing == false and $"..".visible == true:
 				$"../AudioStreamPlayer2D".play()
 			var lpos = to_local(event.position)
 			var impos = lpos-offset+get_rect().size/2.0

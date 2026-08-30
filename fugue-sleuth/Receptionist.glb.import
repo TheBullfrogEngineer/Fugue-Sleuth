@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bkcpojdjiua5g"
-path="res://.godot/imported/Receptionist.glb-3dac8eba6ef6bb73e917f5494c335588.scn"
+path="res://.godot/imported/Receptionist.glb-dae0d346600e7eca8756aa8bd73e71bb.scn"
 
 [deps]
 
-source_file="res://Blender/Characters/Receptionist.glb"
-dest_files=["res://.godot/imported/Receptionist.glb-3dac8eba6ef6bb73e917f5494c335588.scn"]
+source_file="res://Receptionist.glb"
+dest_files=["res://.godot/imported/Receptionist.glb-dae0d346600e7eca8756aa8bd73e71bb.scn"]
 
 [params]
 
