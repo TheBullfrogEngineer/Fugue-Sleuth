@@ -234,28 +234,28 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="Control" unique_id=919891838]
-position = Vector2(361.99997, 205.00009)
+position = Vector2(361.99997, 284.375)
 scale = Vector2(1.3529965, 1.0915084)
 sprite_frames = SubResource("SpriteFrames_4ayxd")
 animation = &"LeftIdle"
 
 [node name="RightHand" type="AnimatedSprite2D" parent="Control" unique_id=1356353393]
-position = Vector2(876.99994, 282.99994)
+position = Vector2(876.99994, 362.37485)
 scale = Vector2(1.0758427, 0.907964)
 sprite_frames = SubResource("SpriteFrames_ggs6p")
 animation = &"RightIdle"
 
 [node name="LeftRun" type="AnimatedSprite2D" parent="Control" unique_id=1072144487]
 visible = false
-position = Vector2(207.00009, 559)
+position = Vector2(207.00009, 638.3749)
 rotation = 0.5270894
 sprite_frames = SubResource("SpriteFrames_dim44")
 autoplay = "default"
-frame_progress = 0.24884929
+frame_progress = 0.27080506
 
 [node name="RightRun" type="AnimatedSprite2D" parent="Control" unique_id=1230167420]
 visible = false
-position = Vector2(1026.0638, 590.3384)
+position = Vector2(1026.0638, 669.71326)
 rotation = -0.5235988
 scale = Vector2(0.92318183, 1.0156064)
 sprite_frames = SubResource("SpriteFrames_q4e88")
