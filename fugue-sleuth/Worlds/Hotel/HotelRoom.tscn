@@ -7,13 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://bwc6y62vj4sas" path="res://Blender/Textures/Wall_Ink.jpg" id="3_0ov87"]
 [ext_resource type="PackedScene" uid="uid://ccur52qjwyt7v" path="res://Character/john_detective.tscn" id="3_8y5sn"]
 [ext_resource type="PackedScene" uid="uid://j0ixb01qc4rs" path="res://Menus/MainQMenu/Notepad.tscn" id="4_d65ua"]
-[ext_resource type="Theme" uid="uid://r3ujndhclyq1" path="res://Menus/default.tres" id="4_lwkga"]
 [ext_resource type="PackedScene" uid="uid://c85frmreni5v1" path="res://Interactable System/door.tscn" id="5_2fuiq"]
 [ext_resource type="Texture2D" uid="uid://ch583hqxixwoi" path="res://Blender/HouseUnfin_Wood.jpg" id="6_yi8oc"]
 [ext_resource type="Texture2D" uid="uid://ch656mola1wma" path="res://Blender/Textures/Bronze_Ink.jpg" id="9_1op6p"]
 [ext_resource type="Texture2D" uid="uid://yupy71tq6tqt" path="res://Blender/Textures/Wood_Ink.jpg" id="9_04l5h"]
 [ext_resource type="Script" uid="uid://bo65a1gpydixs" path="res://Interactable System/physicalnotepad.gd" id="9_o7cum"]
-[ext_resource type="Texture2D" uid="uid://7e3uw13qi0ba" path="res://Blender/textures/Book.png" id="10_cyp34"]
+[ext_resource type="Texture2D" uid="uid://7e3uw13qi0ba" path="res://Blender/Textures/Book.png" id="10_cyp34"]
 [ext_resource type="PackedScene" uid="uid://nh6ly7k4xgk3" path="res://Blender/KenneyFurnitureKitAssets/Models/GLTF format/bathroomCabinetDrawer.glb" id="10_m8duo"]
 [ext_resource type="Texture2D" uid="uid://db6toqxc73eng" path="res://Blender/KenneyFurnitureKitAssets/Side/rugDoormat.png" id="10_yi8oc"]
 [ext_resource type="Texture2D" uid="uid://d2oamj8t16nlo" path="res://Blender/Textures/Bronze.jpg" id="11_1mpv4"]
@@ -865,6 +864,13 @@ ao_light_affect = 1.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tel7m"]
 albedo_texture = ExtResource("2_2fuiq")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_133tk"]
+albedo_texture = ExtResource("3_0ov87")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4snfl"]
+albedo_texture = ExtResource("1_ax5md")
+metallic = 1.0
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7lqb0"]
 points = PackedVector3Array(1.5555556, 2.5386884, 0.17777777, -1.5396826, -2.5386884, -0.13968253, -1.5396826, -2.5386884, 0.17777777, -1.5396826, 2.5386884, -0.13968253, 1.5555556, -2.5386884, -0.13968253, 1.5555556, -2.5386884, 0.17777777, -1.5396826, 2.5386884, 0.17777777, 1.5555556, 2.5386884, -0.13968253)
 
@@ -880,13 +886,6 @@ albedo_texture = ExtResource("10_yi8oc")
 [sub_resource type="BoxMesh" id="BoxMesh_02yn7"]
 size = Vector3(0.6619873, 0.09094238, 0.23132324)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_133tk"]
-albedo_texture = ExtResource("3_0ov87")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4snfl"]
-albedo_texture = ExtResource("1_ax5md")
-metallic = 1.0
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38xje"]
 albedo_texture = ExtResource("1_ax5md")
 metallic = 1.0
@@ -894,8 +893,12 @@ metallic = 1.0
 [sub_resource type="BoxMesh" id="BoxMesh_rddtw"]
 size = Vector3(0.25219727, 1, 1.8354492)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3f3h"]
+albedo_color = Color(1, 0, 0, 1)
+
 [sub_resource type="TextMesh" id="TextMesh_lqlvn"]
-text = "109"
+material = SubResource("StandardMaterial3D_n3f3h")
+text = "Lol"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w5wj6"]
 albedo_color = Color(1, 0.6862745, 0, 1)
@@ -1722,7 +1725,6 @@ transform = Transform3D(-0.7265747, 0, -0.6870875, 0, 1, 0, 0.6870875, 0, -0.726
 visible = true
 
 [node name="Control" parent="." unique_id=101648911 instance=ExtResource("4_d65ua")]
-theme = ExtResource("4_lwkga")
 
 [node name="Room" type="Node3D" parent="." unique_id=1174678315]
 transform = Transform3D(-3.6237576e-08, 0, 1.0012498, 0, 1.0012498, 0, -0.8290191, 0, -4.376602e-08, 0.85503864, 4.8282843, 1.9303846)
@@ -1792,10 +1794,17 @@ physics_material_override = SubResource("PhysicsMaterial_ggs6p")
 shape = SubResource("ConvexPolygonShape3D_2fuiq")
 
 [node name="Wall4" type="CSGBox3D" parent="Room" unique_id=1203833307]
-transform = Transform3D(0.99999994, 0, 3.5527137e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.9999998, 0, 1.0658141e-14, 0, 1, 0, 1.7763568e-13, 0, 1, 0, -1.030899, 0)
 material_override = SubResource("StandardMaterial3D_1mpv4")
 use_collision = true
-size = Vector3(47.443604, 8.788513, 1)
+size = Vector3(47.443604, 10.850311, 1)
+material = SubResource("StandardMaterial3D_gbvmh")
+
+[node name="Wall4" type="CSGBox3D" parent="Room/Wall4" unique_id=541011286]
+transform = Transform3D(0.9999998, 0, 7.1054274e-15, 0, 1, 0, 1.7763568e-13, 0, 1, -9.000611, -0.5511737, 32.293568)
+material_override = SubResource("StandardMaterial3D_1mpv4")
+use_collision = true
+size = Vector3(29.442383, 9.8908615, 1)
 material = SubResource("StandardMaterial3D_gbvmh")
 
 [node name="Wall8" type="CSGBox3D" parent="Room" unique_id=670926857]
@@ -1882,10 +1891,10 @@ size = Vector3(3.0639648, 3.6314545, 0.6826172)
 material = SubResource("StandardMaterial3D_gbvmh")
 
 [node name="Wall6" type="CSGBox3D" parent="Room" unique_id=1036422592]
-transform = Transform3D(-4.3711374e-08, 0, 0.9999998, 0, 1, 0, -0.99999976, 0, -4.371138e-08, 22.967548, 0.042814255, 15.153)
+transform = Transform3D(-4.3711374e-08, 0, 0.9999998, 0, 1, 0, -0.99999976, 0, -4.3710997e-08, 22.967548, 0.042814255, 9.688585)
 material_override = SubResource("StandardMaterial3D_eeg1q")
 use_collision = true
-size = Vector3(33.34619, 8.788513, 0.46777344)
+size = Vector3(22.417358, 8.788513, 0.46777344)
 material = SubResource("StandardMaterial3D_gbvmh")
 
 [node name="bedSingle" type="Node3D" parent="Room" unique_id=1903720960]
@@ -1899,15 +1908,40 @@ physics_material_override = SubResource("PhysicsMaterial_4ayxd")
 transform = Transform3D(1.0000001, 0, -1.7763568e-15, 0, 1.0000001, 0, -8.881784e-16, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ax5md")
 
-[node name="bedSingle(Clone)" type="MeshInstance3D" parent="Room/bedSingle" unique_id=560393525]
+[node name="bedSingle(Clone)" type="MeshInstance3D" parent="Room/bedSingle/StaticBody3D" unique_id=560393525]
+transform = Transform3D(0.99999994, 0, -2.6645353e-15, 0, 0.99999994, 0, -3.5527137e-15, 0, 1, 0, 0, 1.1920929e-07)
 material_override = SubResource("StandardMaterial3D_j2hx1")
 mesh = SubResource("ArrayMesh_pukk7")
 
-[node name="cover" type="MeshInstance3D" parent="Room/bedSingle/bedSingle(Clone)" unique_id=1043199291]
+[node name="cover" type="MeshInstance3D" parent="Room/bedSingle/StaticBody3D/bedSingle(Clone)" unique_id=1043199291]
 transform = Transform3D(2.9802322e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 2.9802322e-08, 0.01, 0.215, -0.7923018)
 mesh = SubResource("ArrayMesh_mtqgt")
 
-[node name="pillow" type="MeshInstance3D" parent="Room/bedSingle/bedSingle(Clone)" unique_id=1970949330]
+[node name="pillow" type="MeshInstance3D" parent="Room/bedSingle/StaticBody3D/bedSingle(Clone)" unique_id=1970949330]
+transform = Transform3D(-5.9604645e-08, 0, -0.85, -0.062666625, 0.49605736, 1.2699755e-08, 0.49605736, 0.062666625, -1.00528894e-07, 0.503, 0.21704455, -1.0312667)
+mesh = SubResource("ArrayMesh_5u46f")
+
+[node name="bedSingle2" type="Node3D" parent="Room" unique_id=1682764418]
+transform = Transform3D(6, 0, -8.526513e-14, 0, 4.996, 0, 5.684342e-14, 0, 6, -24.928438, -4.8193703, 7.223401)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/bedSingle2" unique_id=1142470449]
+transform = Transform3D(1.0000001, 0, -8.881784e-16, 0, 1.0000001, 0, 8.881784e-16, 0, 1, 0, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_4ayxd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/bedSingle2/StaticBody3D" unique_id=1288557462]
+transform = Transform3D(1.0000001, 0, -1.7763568e-15, 0, 1.0000001, 0, -8.881784e-16, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_ax5md")
+
+[node name="bedSingle(Clone)" type="MeshInstance3D" parent="Room/bedSingle2/StaticBody3D" unique_id=222571856]
+transform = Transform3D(0.99999994, 0, -2.6645353e-15, 0, 0.99999994, 0, -3.5527137e-15, 0, 1, 0, 0, 1.1920929e-07)
+material_override = SubResource("StandardMaterial3D_j2hx1")
+mesh = SubResource("ArrayMesh_pukk7")
+
+[node name="cover" type="MeshInstance3D" parent="Room/bedSingle2/StaticBody3D/bedSingle(Clone)" unique_id=680894482]
+transform = Transform3D(2.9802322e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 2.9802322e-08, 0.01, 0.215, -0.7923018)
+mesh = SubResource("ArrayMesh_mtqgt")
+
+[node name="pillow" type="MeshInstance3D" parent="Room/bedSingle2/StaticBody3D/bedSingle(Clone)" unique_id=1278982184]
 transform = Transform3D(-5.9604645e-08, 0, -0.85, -0.062666625, 0.49605736, 1.2699755e-08, 0.49605736, 0.062666625, -1.00528894e-07, 0.503, 0.21704455, -1.0312667)
 mesh = SubResource("ArrayMesh_5u46f")
 
@@ -2336,6 +2370,24 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ptalb")
 [node name="HotelHallway" type="Node3D" parent="." unique_id=530776036]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 29.566017, 0, -8.083561)
 
+[node name="Floor6" type="CSGBox3D" parent="HotelHallway" unique_id=1424132206]
+transform = Transform3D(2.696361, 0, 3.872458e-13, 0, 0.86878395, 0, -3.872458e-13, 0, 2.696361, 17.45034, 3.311013, 27.16175)
+use_collision = true
+size = Vector3(1.44346, 13.327744, 1.7869682)
+material = SubResource("StandardMaterial3D_tel7m")
+
+[node name="Floor5" type="CSGBox3D" parent="HotelHallway" unique_id=66735016]
+transform = Transform3D(1.64206, 0, 1.7763568e-15, 0, 0.9320858, 0, -1.7763568e-15, 0, 1.64206, 17.44146, 5.546131, 27.246515)
+use_collision = true
+size = Vector3(6.798419, 3.8080444, 1.7869682)
+material = SubResource("StandardMaterial3D_tel7m")
+
+[node name="Floor4" type="CSGBox3D" parent="HotelHallway" unique_id=1624860831]
+transform = Transform3D(1.3918507, 0, 1.7763568e-15, 0, 0.95419514, 0, -1.7763568e-15, 0, 1.3918507, 16.394955, -0.7822356, 8.24548)
+use_collision = true
+size = Vector3(20.409813, 1.4249268, 64.74887)
+material = SubResource("StandardMaterial3D_tel7m")
+
 [node name="Floor3" type="CSGBox3D" parent="HotelHallway" unique_id=1267536360]
 transform = Transform3D(1.1797673, 0, 0, 0, 0.97682893, 0, 0, 0, 1.1797673, 34.35564, -0.8692266, 3.782734)
 use_collision = true
@@ -2359,35 +2411,6 @@ material = SubResource("StandardMaterial3D_tel7m")
 [node name="RoomPlaceHolder2" type="Node3D" parent="HotelHallway/Rooms" unique_id=2057638834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.010643)
 
-[node name="Door" type="Node3D" parent="HotelHallway/Rooms/RoomPlaceHolder2" unique_id=72716699]
-
-[node name="hinge" type="Node3D" parent="HotelHallway/Rooms/RoomPlaceHolder2/Door" unique_id=1449548943]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.03132, -0.14027786, 0.3131585)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="HotelHallway/Rooms/RoomPlaceHolder2/Door/hinge" unique_id=930030543]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelHallway/Rooms/RoomPlaceHolder2/Door/hinge/StaticBody3D" unique_id=1525562482]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-shape = SubResource("ConvexPolygonShape3D_7lqb0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder2/Door/hinge" unique_id=1453471747]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-material_override = SubResource("StandardMaterial3D_k22qh")
-mesh = SubResource("BoxMesh_4ayxd")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder2/Door/hinge" unique_id=400847058]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4903808, 2.3423688, -0.07920349)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder2/Door/hinge" unique_id=423105606]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43142843, 2.3423688, 0.12934697)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="Timer" type="Timer" parent="HotelHallway/Rooms/RoomPlaceHolder2/Door" unique_id=1777107291]
-wait_time = 0.5
-
 [node name="Wall2" type="CSGBox3D" parent="HotelHallway/Rooms/RoomPlaceHolder2" unique_id=1238555028]
 transform = Transform3D(-4.3711385e-08, 0, -1.2077522, 0, 1, 0, 0.82798433, 0, -4.371139e-08, 5.470521, 1.8180337, 3.8351042)
 material_override = SubResource("StandardMaterial3D_133tk")
@@ -2403,35 +2426,6 @@ size = Vector3(12.128456, 5.9952316, 1)
 material = SubResource("StandardMaterial3D_4snfl")
 
 [node name="RoomPlaceHolder" type="Node3D" parent="HotelHallway/Rooms" unique_id=452750214]
-
-[node name="Door" type="Node3D" parent="HotelHallway/Rooms/RoomPlaceHolder" unique_id=949036516]
-
-[node name="hinge" type="Node3D" parent="HotelHallway/Rooms/RoomPlaceHolder/Door" unique_id=2084770055]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.03132, -0.14027786, 0.3131585)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="HotelHallway/Rooms/RoomPlaceHolder/Door/hinge" unique_id=1460569505]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelHallway/Rooms/RoomPlaceHolder/Door/hinge/StaticBody3D" unique_id=1501314626]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-shape = SubResource("ConvexPolygonShape3D_7lqb0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder/Door/hinge" unique_id=1117994901]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-material_override = SubResource("StandardMaterial3D_k22qh")
-mesh = SubResource("BoxMesh_4ayxd")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder/Door/hinge" unique_id=543336405]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4903808, 2.3423688, -0.07920349)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder/Door/hinge" unique_id=527340054]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43142843, 2.3423688, 0.12934697)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="Timer" type="Timer" parent="HotelHallway/Rooms/RoomPlaceHolder/Door" unique_id=1432052764]
-wait_time = 0.5
 
 [node name="Wall2" type="CSGBox3D" parent="HotelHallway/Rooms/RoomPlaceHolder" unique_id=1826568028]
 transform = Transform3D(-4.3711385e-08, 0, -1.2077522, 0, 1, 0, 0.82798433, 0, -4.371139e-08, 5.470521, 1.8180337, 3.8351042)
@@ -2450,42 +2444,6 @@ material = SubResource("StandardMaterial3D_4snfl")
 [node name="RoomPlaceHolder3" type="Node3D" parent="HotelHallway/Rooms" unique_id=237451750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.987679)
 
-[node name="Door" type="Node3D" parent="HotelHallway/Rooms/RoomPlaceHolder3" unique_id=1034651049]
-
-[node name="hinge" type="Node3D" parent="HotelHallway/Rooms/RoomPlaceHolder3/Door" unique_id=1589357594]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.03132, -0.14027786, 0.3131585)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="HotelHallway/Rooms/RoomPlaceHolder3/Door/hinge" unique_id=291753162]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelHallway/Rooms/RoomPlaceHolder3/Door/hinge/StaticBody3D" unique_id=28624534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-shape = SubResource("ConvexPolygonShape3D_7lqb0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder3/Door/hinge" unique_id=2058001931]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-material_override = SubResource("StandardMaterial3D_k22qh")
-mesh = SubResource("BoxMesh_4ayxd")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder3/Door/hinge" unique_id=1315673175]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4903808, 2.3423688, -0.07920349)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder3/Door/hinge" unique_id=1035021594]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43142843, 2.3423688, 0.12934697)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="Timer" type="Timer" parent="HotelHallway/Rooms/RoomPlaceHolder3/Door" unique_id=1415218440]
-wait_time = 0.5
-
-[node name="Wall2" type="CSGBox3D" parent="HotelHallway/Rooms/RoomPlaceHolder3" unique_id=1157932030]
-transform = Transform3D(-4.3711385e-08, 0, -1.2077522, 0, 1, 0, 0.82798433, 0, -4.371139e-08, 5.470521, 1.8180337, 3.8351042)
-material_override = SubResource("StandardMaterial3D_133tk")
-use_collision = true
-size = Vector3(8.527649, 6.1457367, 1)
-material = SubResource("StandardMaterial3D_4snfl")
-
 [node name="Wall3" type="CSGBox3D" parent="HotelHallway/Rooms/RoomPlaceHolder3" unique_id=1189232992]
 transform = Transform3D(-4.3711385e-08, 0, -1.2077522, 0, 1, 0, 0.82798433, 0, -4.371139e-08, 5.470521, 7.863915, 2.344398)
 material_override = SubResource("StandardMaterial3D_133tk")
@@ -2496,40 +2454,25 @@ material = SubResource("StandardMaterial3D_4snfl")
 [node name="RoomPlaceHolder4" type="Node3D" parent="HotelHallway/Rooms" unique_id=1353012446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30.04324)
 
-[node name="Door" type="Node3D" parent="HotelHallway/Rooms/RoomPlaceHolder4" unique_id=1367804279]
-
-[node name="hinge" type="Node3D" parent="HotelHallway/Rooms/RoomPlaceHolder4/Door" unique_id=858196008]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.03132, -0.14027786, 0.3131585)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="HotelHallway/Rooms/RoomPlaceHolder4/Door/hinge" unique_id=67036459]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelHallway/Rooms/RoomPlaceHolder4/Door/hinge/StaticBody3D" unique_id=1337318807]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-shape = SubResource("ConvexPolygonShape3D_7lqb0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder4/Door/hinge" unique_id=1629520329]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-material_override = SubResource("StandardMaterial3D_k22qh")
-mesh = SubResource("BoxMesh_4ayxd")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder4/Door/hinge" unique_id=216921854]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4903808, 2.3423688, -0.07920349)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="HotelHallway/Rooms/RoomPlaceHolder4/Door/hinge" unique_id=1916103736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43142843, 2.3423688, 0.12934697)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="Timer" type="Timer" parent="HotelHallway/Rooms/RoomPlaceHolder4/Door" unique_id=1254046608]
-wait_time = 0.5
-
-[node name="Wall2" type="CSGBox3D" parent="HotelHallway/Rooms/RoomPlaceHolder4" unique_id=1241831065]
-transform = Transform3D(-4.3711385e-08, 0, -1.2077522, 0, 1, 0, 0.82798433, 0, -4.371139e-08, 5.470521, 1.8180337, 3.8351042)
+[node name="Wall5" type="CSGBox3D" parent="HotelHallway/Rooms/RoomPlaceHolder4" unique_id=2128504619]
+transform = Transform3D(-4.371141e-08, 0, 0.9999999, 0, 1, 0, -1.0000005, 0, -4.3711385e-08, 20.539423, 4.540732, 6.52499)
 material_override = SubResource("StandardMaterial3D_133tk")
 use_collision = true
-size = Vector3(8.527649, 6.1457367, 1)
+size = Vector3(20.630394, 10.781612, 1)
+material = SubResource("StandardMaterial3D_4snfl")
+
+[node name="Wall4" type="CSGBox3D" parent="HotelHallway/Rooms/RoomPlaceHolder4" unique_id=703104679]
+transform = Transform3D(-1.0000002, 0, 1.0558506e-07, 0, 1, 0, -7.2384694e-08, 0, -0.99999994, 13.35887, 5.99979, 16.643616)
+material_override = SubResource("StandardMaterial3D_133tk")
+use_collision = true
+size = Vector3(15.590021, 13.518059, 1)
+material = SubResource("StandardMaterial3D_4snfl")
+
+[node name="Wall2" type="CSGBox3D" parent="HotelHallway/Rooms/RoomPlaceHolder4" unique_id=1241831065]
+transform = Transform3D(-4.3711385e-08, 0, -1.2077522, 0, 1, 0, 0.82798433, 0, -4.371139e-08, 5.47052, 1.8180337, 6.962475)
+material_override = SubResource("StandardMaterial3D_133tk")
+use_collision = true
+size = Vector3(25.357887, 6.1457367, 1)
 material = SubResource("StandardMaterial3D_4snfl")
 
 [node name="Wall3" type="CSGBox3D" parent="HotelHallway/Rooms/RoomPlaceHolder4" unique_id=203942097]
@@ -2702,35 +2645,6 @@ transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 12.2
 [node name="RoomPlaceHolder2" type="Node3D" parent="HotelHallway/Rooms4" unique_id=1755753571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.010643)
 
-[node name="Door" type="Node3D" parent="HotelHallway/Rooms4/RoomPlaceHolder2" unique_id=1578435914]
-
-[node name="hinge" type="Node3D" parent="HotelHallway/Rooms4/RoomPlaceHolder2/Door" unique_id=1257364827]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.03132, -0.14027786, 0.3131585)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="HotelHallway/Rooms4/RoomPlaceHolder2/Door/hinge" unique_id=906325639]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelHallway/Rooms4/RoomPlaceHolder2/Door/hinge/StaticBody3D" unique_id=2108274868]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-shape = SubResource("ConvexPolygonShape3D_7lqb0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="HotelHallway/Rooms4/RoomPlaceHolder2/Door/hinge" unique_id=1873597591]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-material_override = SubResource("StandardMaterial3D_k22qh")
-mesh = SubResource("BoxMesh_4ayxd")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="HotelHallway/Rooms4/RoomPlaceHolder2/Door/hinge" unique_id=531554037]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4903808, 2.3423688, -0.07920349)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="HotelHallway/Rooms4/RoomPlaceHolder2/Door/hinge" unique_id=1760929674]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43142843, 2.3423688, 0.12934697)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="Timer" type="Timer" parent="HotelHallway/Rooms4/RoomPlaceHolder2/Door" unique_id=380541630]
-wait_time = 0.5
-
 [node name="Wall2" type="CSGBox3D" parent="HotelHallway/Rooms4/RoomPlaceHolder2" unique_id=212636043]
 transform = Transform3D(-4.3711385e-08, 0, -1.2077522, 0, 1, 0, 0.82798433, 0, -4.371139e-08, 5.470521, 1.8180337, 3.8351042)
 material_override = SubResource("StandardMaterial3D_133tk")
@@ -2746,35 +2660,6 @@ size = Vector3(12.128456, 5.9952316, 1)
 material = SubResource("StandardMaterial3D_4snfl")
 
 [node name="RoomPlaceHolder" type="Node3D" parent="HotelHallway/Rooms4" unique_id=1803805121]
-
-[node name="Door" type="Node3D" parent="HotelHallway/Rooms4/RoomPlaceHolder" unique_id=1497688773]
-
-[node name="hinge" type="Node3D" parent="HotelHallway/Rooms4/RoomPlaceHolder/Door" unique_id=2140449373]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.03132, -0.14027786, 0.3131585)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="HotelHallway/Rooms4/RoomPlaceHolder/Door/hinge" unique_id=1054906360]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HotelHallway/Rooms4/RoomPlaceHolder/Door/hinge/StaticBody3D" unique_id=958600811]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-shape = SubResource("ConvexPolygonShape3D_7lqb0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="HotelHallway/Rooms4/RoomPlaceHolder/Door/hinge" unique_id=1206376876]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4995426, 2.4975479, 0)
-material_override = SubResource("StandardMaterial3D_k22qh")
-mesh = SubResource("BoxMesh_4ayxd")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="HotelHallway/Rooms4/RoomPlaceHolder/Door/hinge" unique_id=526316866]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4903808, 2.3423688, -0.07920349)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="HotelHallway/Rooms4/RoomPlaceHolder/Door/hinge" unique_id=1253756591]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43142843, 2.3423688, 0.12934697)
-material_override = SubResource("StandardMaterial3D_obn2l")
-mesh = SubResource("BoxMesh_02yn7")
-
-[node name="Timer" type="Timer" parent="HotelHallway/Rooms4/RoomPlaceHolder/Door" unique_id=1227624572]
-wait_time = 0.5
 
 [node name="Wall2" type="CSGBox3D" parent="HotelHallway/Rooms4/RoomPlaceHolder" unique_id=1738677707]
 transform = Transform3D(-4.3711385e-08, 0, -1.2077522, 0, 1, 0, 0.82798433, 0, -4.371139e-08, 5.470521, 1.8180337, 3.8351042)
@@ -3041,10 +2926,10 @@ size = Vector3(8.527649, 6.1457367, 1)
 material = SubResource("StandardMaterial3D_4snfl")
 
 [node name="Wall3" type="CSGBox3D" parent="HotelHallway/Rooms2/RoomPlaceHolder4" unique_id=1427314059]
-transform = Transform3D(-4.3711385e-08, 0, -1.2077522, 0, 1, 0, 0.82798433, 0, -4.371139e-08, 5.470521, 7.863915, 2.344398)
+transform = Transform3D(-4.3711385e-08, 0, -1.2077522, 0, 1, 0, 0.82798433, 0, -4.371139e-08, 5.47052, 11.536066, 0.5931282)
 material_override = SubResource("StandardMaterial3D_133tk")
 use_collision = true
-size = Vector3(12.128456, 5.9952316, 1)
+size = Vector3(16.358662, 13.339535, 1)
 material = SubResource("StandardMaterial3D_4snfl")
 
 [node name="Wall5" type="CSGBox3D" parent="HotelHallway" unique_id=2135487869]
@@ -3057,6 +2942,11 @@ material = SubResource("StandardMaterial3D_4snfl")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HotelHallway" unique_id=398476194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7599163, 4.248275, -34.248737)
 mesh = SubResource("BoxMesh_rddtw")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="HotelHallway" unique_id=1950007697]
+transform = Transform3D(-25, 0, -2.1855694e-06, 0, 25, 0, 2.1855694e-06, 0, -25, 13.247341, 4.614148, -14.34174)
+mesh = SubResource("TextMesh_lqlvn")
+surface_material_override/0 = SubResource("StandardMaterial3D_w5wj6")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="HotelHallway" unique_id=1677450836]
 transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -4.3557487, 4.30981, -34.27891)
@@ -3165,6 +3055,18 @@ mesh = SubResource("ArrayMesh_4bpin")
 script = ExtResource("27_ad41q")
 evidence_card = ExtResource("28_lwkga")
 metadata/_custom_type_script = "uid://co66l6ptpjbnc"
+
+[node name="Door3" parent="HotelHallway" unique_id=603023954 instance=ExtResource("5_2fuiq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.6157036, -0.29634953, -1.2532196)
+
+[node name="Door6" parent="HotelHallway" unique_id=274077324 instance=ExtResource("5_2fuiq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.189854, -0.16347933, -11.19693)
+
+[node name="Door5" parent="HotelHallway" unique_id=1130802970 instance=ExtResource("5_2fuiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.40358, -0.2643118, -33.376495)
+
+[node name="Door4" parent="HotelHallway" unique_id=1979437108 instance=ExtResource("5_2fuiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.544564, -0.29634953, -33.20433)
 
 [node name="Door" parent="HotelHallway" unique_id=1377829474 instance=ExtResource("5_2fuiq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.420807, -0.14817476, -32.613472)
@@ -4489,7 +4391,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.141018, 37.40132, -21.7437
 shape = SubResource("BoxShape3D_n3f3h")
 
 [node name="Auditorium-col" parent="." unique_id=1337999924 instance=ExtResource("48_c54il")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.9927, -18.49767, 42.10125)
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 35.600456, 3.6917086, -41.08072)
+
+[node name="A-M" type="Node3D" parent="." unique_id=1460818237]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 35.600456, 3.6917086, -41.08072)
 
 [node name="RoomA-col" type="Node3D" parent="." unique_id=990761191]
 transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 78.76864, -0.18909836, -0.91971874)
@@ -4506,15 +4411,9 @@ shape = SubResource("ConcavePolygonShape3D_kom0q")
 
 [connection signal="give_notes" from="John Detective" to="Control" method="_on_john_detective_give_notes"]
 [connection signal="interacted" from="Room3/Bathroom/Detective/InteractableObject" to="Room3/Bathroom/Detective" method="last_cutscene"]
-[connection signal="timeout" from="HotelHallway/Rooms/RoomPlaceHolder2/Door/Timer" to="HotelHallway/Rooms/RoomPlaceHolder2/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
-[connection signal="timeout" from="HotelHallway/Rooms/RoomPlaceHolder/Door/Timer" to="HotelHallway/Rooms/RoomPlaceHolder/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
-[connection signal="timeout" from="HotelHallway/Rooms/RoomPlaceHolder3/Door/Timer" to="HotelHallway/Rooms/RoomPlaceHolder3/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
-[connection signal="timeout" from="HotelHallway/Rooms/RoomPlaceHolder4/Door/Timer" to="HotelHallway/Rooms/RoomPlaceHolder4/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="HotelHallway/Rooms3/RoomPlaceHolder/Door/Timer" to="HotelHallway/Rooms3/RoomPlaceHolder/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="HotelHallway/Rooms3/RoomPlaceHolder3/Door/Timer" to="HotelHallway/Rooms3/RoomPlaceHolder3/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="HotelHallway/Rooms3/RoomPlaceHolder4/Door/Timer" to="HotelHallway/Rooms3/RoomPlaceHolder4/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
-[connection signal="timeout" from="HotelHallway/Rooms4/RoomPlaceHolder2/Door/Timer" to="HotelHallway/Rooms4/RoomPlaceHolder2/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
-[connection signal="timeout" from="HotelHallway/Rooms4/RoomPlaceHolder/Door/Timer" to="HotelHallway/Rooms4/RoomPlaceHolder/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="HotelHallway/Rooms2/RoomPlaceHolder2/Door/Timer" to="HotelHallway/Rooms2/RoomPlaceHolder2/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="HotelHallway/Rooms2/RoomPlaceHolder2/Door/Door/Timer" to="HotelHallway/Rooms2/RoomPlaceHolder2/Door/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
 [connection signal="timeout" from="HotelHallway/Rooms2/RoomPlaceHolder2/Door/Door/Door/Timer" to="HotelHallway/Rooms2/RoomPlaceHolder2/Door/Door/Door/hinge/StaticBody3D" method="_on_timer_timeout"]
